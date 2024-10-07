@@ -6,9 +6,9 @@ read $1
 echo 
 
 echo "This script was called with $# parameters"
-echo "The script's name is $0"
-echo "The arguments are $@"
-echo "The first argument is $1"
+echo "The script's name is $0" # automatically the filename
+echo "The arguments are $@" 
+echo "The first argument is $1" #set in the terminal , put after file name (bash variables.sh 1 two)...?
 echo "The second argument is $2"
 echo "the third argument is $3" #arguments are set in the terminal 
 

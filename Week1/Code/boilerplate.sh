@@ -16,3 +16,4 @@ MY_VAR=10
 read MY_VAR
 MY_VAR=$( (ls | wc -l) )
 echo -e MY_VAR
+
