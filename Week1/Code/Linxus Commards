@@ -1,0 +1,33 @@
+#Assigning commards to a file (>)
+echo "My first line" > test.txt 
+cat test.txt # cat displays text files on screen.
+
+# My first line 
+
+#Adding further infomation to that file (>>)
+echo "My Second Line" >> test.txt 
+cat test.txt 
+
+#My first line 
+# AND (>>)
+#My Second line 
+
+#Assigning a place to a text format 
+ls / >> ListRootDir.txt #(root files assigned to a displayed place) 
+cat ListRootDir.txt
+
+# Couting how many files are in a root
+ls / | wc -l # = 17 because i have 17 files in my root folder 
+# wc is word count in linux 
+# - l is 'long format' displaying Unix file types. permissions and a number of hard links
+# | "pipe" concatinates ideas 
+ls -lt | head -5
+
+#Wildcard commands to target files with specific names 
+# ? any 1 letter/ number in that files will be tageted
+# * a whole name 
+# [define a cass of numbers eg capitals] any file with a capital
+
+# find file name
+find . -name "File1.txt"
+find . -maxdepth 2 -name "*.txt"

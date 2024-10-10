@@ -1,16 +1,17 @@
-#!/bin/bash
+#!/bin/sh
+# Author: Saskia sp621@imperial.ac.uk
+# Script: ConcatenateTwoFiles
+# Desc: Combines two files, which are inputed, into a new file.
+# Arguments: three
+# Date: Oct 2 2024
 
-#!/bin/bash
-
-cat $1 > $3   # replaced
-cat $2 >> $3 # added
-echo "Merged File is"
-cat $3
-
-#$1 is the way the shell script defines a placeholder for a variable eg the filename 
-# assigned $1 as line number 
-#the direction of the mouth is the final product 
-# eg 1 < 2, 2 is the result
-
-#arguments are placed into the termianal after the file name.
-#bash script.sh file1.txt file2.txt merged.txt -> this is what it should look like
+file="../data/$#"
+echo "Combinging these files.."
+if [ "$#" -ne 3 ]; then
+    echo "Put in 1 single file."
+else
+    cat $1 > $3   # replaced
+    cat $2 >> $3 # added
+    echo "Merged File is" $3 # Replace tabs with commas and save as .csv
+    echo "Done!"
+fi

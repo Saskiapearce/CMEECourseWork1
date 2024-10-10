@@ -1,0 +1,22 @@
+# Author: Saskia Pearce sp621@imperial.ac.uk
+# Script: UniPrac1.txt
+# Desc: Practical assessment 1, analysing a FASTA file
+# Arguments: 1
+# Date: Oct 2024
+
+#1
+wc -l ../data/ *.fasta # counts the number of lines 
+
+#2
+tail -n +2 ../data/ *.fasta # print second line onwards
+
+#3
+wc -c ../data/ *.fasta # counts the sequence length of genome
+
+#4
+tail -n +2 ../data/ *.fasta | tr -d '\n' | grep -o "ATGC" | wc -l # 'count ATGC' #counts instances of "ATGC" in the line
+
+#5 
+echo "scale=6; $(tail -n +2 ../data/ *.fasta | tr -d '\n' | grep -o -E "A|T" | wc -l) / $(tail -n +2 E.coli.fasta | tr -d '\n' | grep -o -E "G|C" | wc -l)" | bc # AT/GC ratio calculated using devision of line lengths 
+
+ 
