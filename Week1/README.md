@@ -1,4 +1,3 @@
-Here are some suggestions to improve the readability, organisation, and detail of your GitHub README file:
 CMEECourseWork
 Title: Week 1 Biological Computing Bootcamp
 
