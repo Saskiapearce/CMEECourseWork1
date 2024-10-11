@@ -1,5 +1,5 @@
 #!/bin/sh
-#Author: Saskia sp621@.ic.ac.uk
+# Author: Saskia sp621@.ic.ac.uk
 # Script: tabtocsv.sh
 # Description: substitute the tabs in the files with commas, saving a new file as a csv. The results are saved to the results file
 # Arguments: 1 -> tab delimited file
