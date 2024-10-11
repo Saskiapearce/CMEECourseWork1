@@ -14,10 +14,9 @@ if [[ "$file" == *.csv ]]; then
         filename=$(basename "$file" .csv) # removes the .csv from the final file name
         
         # Convert the file and place it in the results folder
-        tr -s "," " " < "$file" > "$results_folder/${filename}_2.txt"
+        tr -s "," " " < "$file" > "$results_folder/${filename}_2.txt" # puts file into results folder with the base name and a new .txt
         
         echo "Done! File saved to $results_folder/${filename}_2.txt"
 else
         echo "This is not a csv" # print text if not a csv
 fi
-

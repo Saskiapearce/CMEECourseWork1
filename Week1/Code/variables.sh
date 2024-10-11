@@ -25,9 +25,10 @@ echo
 
 ## Assigned Variables; Reading (multiple values) from user input: 
 echo 'Enter two numbers separated by spaces'
-read a b 
+read a b # input variables 
 echo
-echo 'you entered' $a 'and' $b ',their sum is:'
+echo 'you entered' $a 'and' $b ',their sum is:' #prints the sum 
 
 MY_SUM=$(expr $a + $b) #addition of both numbers 
 echo $MY_SUM
+
