@@ -11,7 +11,7 @@ wc -l ../data/ *.fasta # counts the number of lines
 tail -n +2 ../data/ *.fasta # print second line onwards
 
 #3
-wc -c ../data/ *.fasta # counts the sequence length of genome
+wc -c ../data/ *.fasta # counts the sequence length (characters) of genome
 
 #4
 tail -n +2 ../data/ *.fasta | tr -d '\n' | grep -o "ATGC" | wc -l # 'count ATGC' #counts instances of "ATGC" in the line

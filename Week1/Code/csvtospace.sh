@@ -6,10 +6,17 @@
 # Date: Oct 2024
 
 file="../data/$1" # pulls file from data folder
+results_folder="../results" # specify the output folder
+
 echo "Converting comma-delimited CSV file to space-delimited ..." 
 if [[ "$file" == *.csv ]]; then 
-        tr -s "," " " < "$file" > "${file}_2.txt"  # only converts it if file is a csv
-        echo "Done!" 
+        # Extract filename without the directory
+        filename=$(basename "$file" .csv) # removes the .csv from the final file name
+        
+        # Convert the file and place it in the results folder
+        tr -s "," " " < "$file" > "$results_folder/${filename}_2.txt"
+        
+        echo "Done! File saved to $results_folder/${filename}_2.txt"
 else
         echo "This is not a csv" # print text if not a csv
 fi

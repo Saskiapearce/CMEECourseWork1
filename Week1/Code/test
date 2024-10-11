@@ -1,0 +1,18 @@
+file="../data/$1" # pulls file from data folder
+output_folder="../results" # specify the output folder
+
+# Create the results folder if it doesn't exist
+mkdir -p "$output_folder"
+
+echo "Converting comma-delimited CSV file to space-delimited ..." 
+if [[ "$file" == *.csv ]]; then 
+        # Extract filename without the directory
+        filename=$(basename "$file" .csv)
+        
+        # Convert the file and place it in the results folder
+        tr -s "," " " < "$file" > "$output_folder/${filename}_2.txt"
+        
+        echo "Done! File saved to $output_folder/${filename}_2.txt"
+else
+        echo "This is not a csv" # print text if not a csv
+fi

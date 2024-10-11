@@ -3,7 +3,7 @@
 # Script: variables.sh
 # Desc: variables are tested within the script
 # Arguments: none
-# Date: Oct 2 2024
+# Date: Oct 2024
 
 echo "This script was called with $# parameters"
 echo "The script's name is $0" # automatically assigns the filename

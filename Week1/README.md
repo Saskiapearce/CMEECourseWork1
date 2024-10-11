@@ -21,7 +21,7 @@ bash
 git clone git@github.com:Saskiapearce/CMEECourseWork.git
 
 Project Structure and Usage:
-The repository contains 10 primary scripts located in the Code folder. The Data folder includes input files used by some scripts, while the sandbox folder contains experimental files and is not essential to the main coursework. No output is generated in the results folder for this week’s coursework.
+The repository contains 10 primary scripts located in the Code folder. The Data folder includes input files used by some scripts, while the sandbox folder contains experimental files and is not essential to the main coursework. Output files are generated in the results folder for this week’s coursework.
 
 Here’s an overview of the scripts:
 
