@@ -7,7 +7,7 @@
 
 # number of files should equal 1
 file="../data/$1" #this is where the input files are pulled from 
-results_folder="../results" # c results folder to place new files into
+results_folder="../results" # results folder to place new files into
 
 echo "Converting tab file to csv file..." 
 if [ "$#" -ne 1 ]; then # check if the value of the variable is not equal to 1

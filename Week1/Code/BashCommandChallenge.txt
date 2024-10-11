@@ -8,13 +8,16 @@
 #Original Code 
 find . -type f -exec ls -s {} \; | sort -n | head -10
 
-#run files all toegther instead of one by one
+#run files all together instead of one by one
 #find . -type f -exec ls -s {} + | sort -n | head -10 
 
 #convert file sizes in blocks (ls -s) to human readable (ls -lh) 
 find . -type f -exec ls -lh {} + | sort -n | head -10 
 
-# print 0 outputs files improves code efficeny with filenames with spaces or species characters 
+# print 0 outputs files improves code efficiency with filenames with spaces or species characters 
 #find . -type f -print0 | xargs -0 stat --format="%s %n" | sort -n | head -10
- 
+# %s %n displays size and name 
+
+
+
 
