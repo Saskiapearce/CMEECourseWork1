@@ -1,0 +1,709 @@
+Starting code feedback for Saskia, Week1
+
+Current Points = 100
+
+Note that: 
+(1) Major sections begin with a double "====" line 
+(2) Subsections begin with a single "====" line 
+(3) Code output or text file content are printed within single "*****" lines 
+
+======================================================================
+======================================================================
+Your Git repo size this week is about 1.93 MiB on disk 
+
+PART 1: Checking project workflow...
+
+Found the following directories in parent directory: .git, Feedback, Week1, Week2
+
+Found the following files in parent directory: .DS_Store
+
+Checking for key files in parent directory...
+
+.gitignore missing, 1 pt deducted
+
+Current Points = 99
+
+README file missing, 1 pt deducted
+
+Current Points = 98
+
+======================================================================
+Looking for the weekly directories...
+
+Found 2 weekly directories: Week1, Week2
+
+The Week1 directory will be assessed 
+
+======================================================================
+======================================================================
+PART 2: Checking weekly code and workflow...
+
+======================================================================
+Assessing WEEK1...
+
+Found the following directories: Sandbox, Code, Results, Data
+
+Found the following files: .DS_Store, README.md
+
+Checking for readme file in weekly directory...
+
+Found README in parent directory, named: README.md
+
+Printing contents of README.md:
+
+**********************************************************************
+CMEECourseWork
+
+Title: Week 1 Biological Computing Bootcamp
+
+Brief Description:
+
+This repository contains coursework for the Computational Methods in Ecology and Evolution (CMEE) module, specifically focusing on biological computing tasks using Linux and shell scripting. The exercises are based on TheMulQuaBio course notes (https://mhasoba.github.io/TheMulQuaBio/intro.html) from the Biological Computing course at the Department of Life Sciences, Imperial College London.
+
+Languages:
+
+    Linux Shell Scripting (Tested on version 21.3.0)
+
+Dependencies:
+
+    None: All scripts use basic shell commands, which should be available in most Linux distributions.
+
+Installation:
+
+To clone this repository, use the following command:
+bash
+git clone git@github.com:Saskiapearce/CMEECourseWork.git
+
+Project Structure and Usage:
+The repository contains 10 primary scripts located in the Code folder. The Data folder includes input files used by some scripts, while the sandbox folder contains experimental files and is not essential to the main coursework. Output files are generated in the results folder for this week’s coursework.
+
+Here’s an overview of the scripts:
+
+    Boilerplate.sh:
+        Purpose: Prints lines of text as a demonstration of shell script syntax.
+        Usage: Run without arguments for sample text output.
+
+    variables.sh:
+        Purpose: Prints a given string and adds two provided numbers.
+        Usage: Takes one string and two numerical inputs.
+
+    MyExampleScript.sh:
+        Purpose: Outputs the current user's name.
+        Usage: Run without arguments.
+
+    tabtocsv.sh:
+        Purpose: Converts a tab-separated file to a comma-separated values (CSV) file.
+        Usage: ./tabtocsv.sh <input.tab>
+
+    CountLine.sh:
+        Purpose: Counts the number of lines in a specified file.
+        Usage: ./CountLine.sh <file>
+
+    ConcatenateTwoFiles.sh:
+        Purpose: Merges two specified files into a new file.
+        Usage: ./ConcatenateTwoFiles.sh <file1> <file2>
+
+    tiff2png.sh:
+        Purpose: Converts a TIFF image file to PNG format.
+        Usage: ./tiff2png.sh <image.tiff>
+
+    csvtospace.sh:
+        Purpose: Transforms commas in a CSV file into spaces, outputting a TXT file.
+        Usage: ./csvtospace.sh <file.csv>
+
+    Translate.sh:
+        Purpose: Demonstrates string manipulation by removing excess spaces, deleting 'a's, and converting text to uppercase.
+        Usage: ./Translate.sh <file.txt>
+
+    UnixPrac1.sh:
+        Purpose: Analyzes a FASTA file, counts lines, displays lines from the second onwards, calculates sequence length, and finds AT/GC ratios.
+        Usage: ./UnixPrac1.sh <file.fasta>
+
+Author Information:
+
+    Name: Saskia Pearce
+    Contact: sp621@ic.ac.uk
+**********************************************************************
+
+Results directory is empty - good! 
+
+Found 13 code files: CountLines.sh, FirstExample.tex, boilerplate.sh, tabtocsv.sh, csvtospace.sh, BashCommandChallenge.txt, tiff2png.sh, MyExampleScript.sh, UnixPrac1.txt, Translate.sh, FirstBiblio.bib, variables.sh, ConcatenateTwoFiles.sh
+
+Found the following extra files: FirstExample.pdf
+0.5 pt deducted per extra file
+
+Current Points = 97.5
+
+======================================================================
+Testing script/code files...
+
+======================================================================
+Inspecting script file CountLines.sh...
+
+File contents are:
+
+**********************************************************************
+#!/bin/sh
+# Author: Saskia sp621@imperial.ac.uk
+# Script: CountLine.sh
+# Desc: simple code to count lines in python
+# Arguments: one
+# Date: Oct 2024
+#Count lines in a file
+
+file="../data/$1" # pulls file from data folder
+
+echo "Counting lines in file" 
+if [ "$#" -ne 1 ]; then # tthe
+    echo "Put in 1 single file."
+    exit 1
+else
+    NumLines=$(wc -l < "$file") #redirects the contense of the file to the conmands (wc -l)
+    echo "The file $1 has $NumLines lines" #print number of lines
+    echo
+fi
+
+
+
+
+**********************************************************************
+
+Testing CountLines.sh...
+
+Output (only first 500 characters): 
+
+
+**********************************************************************
+Counting lines in file
+Put in 1 single file.
+
+**********************************************************************
+
+Code ran without errors
+
+Time consumed = 0.00411s
+
+======================================================================
+Inspecting script file FirstExample.tex...
+
+File contents are:
+
+**********************************************************************
+\documentclass[12pt]{article}
+
+\title{A Simple Document}
+
+\author{Your Name}
+
+\date{}
+
+\begin{document}
+  \maketitle
+  
+  \begin{abstract}
+    This paper analyzes a seminal equation in population biology.
+  \end{abstract}
+  
+  \section{Introduction}
+    Blah Blah
+  
+  \section{Materials \& Methods}
+  
+  A foundational equation of population biology is:
+  
+  \begin{equation}
+    \frac{dN}{dt} = r N (1 - \frac{N}{K})
+  \end{equation}
+  
+  It was first proposed by Verhulst in 1838 \cite{verhulst1838notice}.
+  
+  \bibliographystyle{plain}
+  
+  \bibliography{FirstBiblio}
+
+\end{document}
+**********************************************************************
+
+Testing FirstExample.tex...
+
+======================================================================
+Inspecting script file boilerplate.sh...
+
+File contents are:
+
+**********************************************************************
+#export PATH=$PATH:$HOME/.local/bin
+#!/bin/sh
+# Author: Saskia sp621@imperial.ac.uk
+# Script: boilerplate.sh
+# Desc: simple boilerplate for shell scripts
+# Arguments: none
+# Date: Oct 2024
+
+echo -e "\nThis is a shell script! \n" # prints text within n\
+echo -e "\nThis is a line of text! \n" # new line between text
+echo -e "\nThis is also an additional line of text... hello! \n"
+
+exit #terminates file run
+
+
+
+
+
+
+
+**********************************************************************
+
+Testing boilerplate.sh...
+
+Output (only first 500 characters): 
+
+
+**********************************************************************
+
+This is a shell script! 
+
+
+This is a line of text! 
+
+
+This is also an additional line of text... hello! 
+
+
+**********************************************************************
+
+Code ran without errors
+
+Time consumed = 0.00445s
+
+======================================================================
+Inspecting script file tabtocsv.sh...
+
+File contents are:
+
+**********************************************************************
+#!/bin/sh
+# Author: Saskia sp621@.ic.ac.uk
+# Script: tabtocsv.sh
+# Description: substitute the tabs in the files with commas, saving a new file as a csv. The results are saved to the results file
+# Arguments: 1 -> tab delimited file
+# Date: Oct 2024
+
+# number of files should equal 1
+file="../data/$1" #this is where the input files are pulled from 
+results_folder="../results" # results folder to place new files into
+
+echo "Converting tab file to csv file..." 
+if [ "$#" -ne 1 ]; then # check if the value of the variable is not equal to 1
+    echo "Put in 1 single file."
+    exit 1
+fi
+# Check if the file has a .tab extension
+if [[ "$file" == *.tab ]]; then # checks if the file type is a *.tab
+    filename=$(basename "$file" .tab) # creates the filename as a basename 
+    tr -s "\t" "," < "$file" > "$results_folder/${filename}_2.csv"  # Replace tabs with commas and save as .csv
+    echo "Done! File saved to $results_folder/${filename}_2.csv"
+else
+    echo "This is not a .tab file" #print if not tab file
+fi
+
+**********************************************************************
+
+Testing tabtocsv.sh...
+
+Output (only first 500 characters): 
+
+
+**********************************************************************
+Converting tab file to csv file...
+Put in 1 single file.
+
+**********************************************************************
+
+Code ran without errors
+
+Time consumed = 0.00367s
+
+======================================================================
+Inspecting script file csvtospace.sh...
+
+File contents are:
+
+**********************************************************************
+#!/bin/sh
+# Author: Saskia Pearce sp621@imperial.ac.uk
+# Script: csvtospace.sh
+# Desc: Practical assessment 2, tranlates commas to spaces, creating a in a txt file from a CSV
+# Arguments: 1 -> comma delimited file
+# Date: Oct 2024
+
+file="../data/$1" # pulls file from data folder
+results_folder="../results" # specify the output folder
+
+echo "Converting comma-delimited CSV file to space-delimited ..." 
+if [[ "$file" == *.csv ]]; then 
+        # Extract filename without the directory
+        filename=$(basename "$file" .csv) # removes the .csv from the final file name
+        
+        # Convert the file and place it in the results folder
+        tr -s "," " " < "$file" > "$results_folder/${filename}_2.txt" # puts file into results folder with the base name and a new .txt
+        
+        echo "Done! File saved to $results_folder/${filename}_2.txt"
+else
+        echo "This is not a csv" # print text if not a csv
+fi
+
+**********************************************************************
+
+Testing csvtospace.sh...
+
+Output (only first 500 characters): 
+
+
+**********************************************************************
+Converting comma-delimited CSV file to space-delimited ...
+This is not a csv
+
+**********************************************************************
+
+Code ran without errors
+
+Time consumed = 0.00309s
+
+======================================================================
+Inspecting script file BashCommandChallenge.txt...
+
+File contents are:
+
+**********************************************************************
+#!/bin/sh
+#Author: Saskia sp621@.ic.ac.uk
+# Script: BashCommandChallenge.txt
+# Description: optimising code to order files in size order with human readable filesizes
+# Arguments: none
+# Date: Oct 2024
+
+#Original Code 
+find . -type f -exec ls -s {} \; | sort -n | head -10
+
+#run files all together instead of one by one
+#find . -type f -exec ls -s {} + | sort -n | head -10 
+
+#convert file sizes in blocks (ls -s) to human readable (ls -lh) 
+find . -type f -exec ls -lh {} + | sort -n | head -10 
+
+# print 0 outputs files improves code efficiency with filenames with spaces or species characters 
+#find . -type f -print0 | xargs -0 stat --format="%s %n" | sort -n | head -10
+# %s %n displays size and name 
+
+
+
+
+
+**********************************************************************
+
+Testing BashCommandChallenge.txt...
+
+======================================================================
+Inspecting script file tiff2png.sh...
+
+File contents are:
+
+**********************************************************************
+#!/bin/sh
+# Author: Saskia sp621@imperial.ac.uk
+# Script: tiff2png.sh 
+# Desc: Converts a tiff to a png
+# Arguments: 1 -> .tif file
+# Date: Oct 2024
+
+for f in *.tif; # the * makes to so that ANY file with this ending are selected 
+    do 
+        echo "Converting $f"; 
+        convert "$f" "$(basename "$f" . tif).png"; # renames new file (PNG)
+    done 
+
+
+**********************************************************************
+
+Testing tiff2png.sh...
+
+Output (only first 500 characters): 
+
+
+**********************************************************************
+Converting *.tif
+
+**********************************************************************
+
+Encountered error (or warning):
+
+***IGNORE IF THIS ERROR IS EXPECTED AS PART OF AN IN-CLASS EXERCISE***
+
+basename: extra operand ‘tif’
+Try 'basename --help' for more information.
+convert-im6.q16: unable to open image `*.tif': No such file or directory @ error/blob.c/OpenBlob/2964.
+convert-im6.q16: no images defined `.png' @ error/convert.c/ConvertImageCommand/3234.
+
+======================================================================
+Inspecting script file MyExampleScript.sh...
+
+File contents are:
+
+**********************************************************************
+#!/bin/sh
+# Author: Saskia sp621@.ic.ac.uk
+# Script: MyExampleScript.sh
+# Description: prints the name of the user
+# Arguments: none
+# Date: Oct 2024
+
+MSG1="Hello"
+MSG2=$USER #user is an example of environemtnal variable, which cant change
+echo "$USG1 $MSG2" # "Hello, user"
+echo "Hello $USER" # print user name 
+echo 
+**********************************************************************
+
+Testing MyExampleScript.sh...
+
+Output (only first 500 characters): 
+
+
+**********************************************************************
+ mhasoba
+Hello mhasoba
+
+
+**********************************************************************
+
+Code ran without errors
+
+Time consumed = 0.00318s
+
+======================================================================
+Inspecting script file UnixPrac1.txt...
+
+File contents are:
+
+**********************************************************************
+# Author: Saskia Pearce sp621@imperial.ac.uk
+# Script: UniPrac1.txt
+# Desc: Practical assessment 1, analysing a FASTA file
+# Arguments: 1
+# Date: Oct 2024
+
+#1
+wc -l ../data/ *.fasta # counts the number of lines 
+
+#2
+tail -n +2 ../data/ *.fasta # print second line onwards
+
+#3
+wc -c ../data/ *.fasta # counts the sequence length (characters) of genome
+
+#4
+tail -n +2 ../data/ *.fasta | tr -d '\n' | grep -o "ATGC" | wc -l # 'count ATGC' #counts instances of "ATGC" in the line
+
+#5 
+echo "scale=6; $(tail -n +2 ../data/ *.fasta | tr -d '\n' | grep -o -E "A|T" | wc -l) / $(tail -n +2 E.coli.fasta | tr -d '\n' | grep -o -E "G|C" | wc -l)" | bc # AT/GC ratio calculated using devision of line lengths 
+
+ 
+**********************************************************************
+
+Testing UnixPrac1.txt...
+
+======================================================================
+Inspecting script file Translate.sh...
+
+File contents are:
+
+**********************************************************************
+#!/bin/sh
+#Author: Saskia sp621@.ic.ac.uk
+# Script: MyExampleScript.sh
+# Description: Shows translation features eg removes excess spaces, removes all the a's, sets text to uppercase 
+# Arguments: none
+# Date: Oct 2024
+
+echo "Remove     excess      spaces." | tr -s " " #removes all the spaces 
+echo "Remove all the a's" | tr -d "a" #removes all the a's
+echo "set to uppercase" | tr [:lower:] [:upper:] #sets everything to uppercase
+echo "10.00 only numbers 1.33" | tr -d [:alpha:] | tr -s "" "," # only prints numbers
+
+**********************************************************************
+
+Testing Translate.sh...
+
+Output (only first 500 characters): 
+
+
+**********************************************************************
+Remove excess spaces.
+Remove ll the 's
+SET TO UPPERCASE
+10.00   1.33
+
+**********************************************************************
+
+Code ran without errors
+
+Time consumed = 0.01082s
+
+======================================================================
+Inspecting script file FirstBiblio.bib...
+
+File contents are:
+
+**********************************************************************
+@article{verhulst1838notice,
+  title={Notice sur la loi que la population suit dans son accroissement},
+  author={Verhulst, Pierre-Fran{\c{c}}ois},
+  journal={Corresp. Math. Phys.},
+  volume={10},
+  pages={113--126},
+  year={1838}
+}
+
+**********************************************************************
+
+Testing FirstBiblio.bib...
+
+======================================================================
+Inspecting script file variables.sh...
+
+File contents are:
+
+**********************************************************************
+#!/bin/sh
+# Author: Saskia sp621@imperial.ac.uk
+# Script: variables.sh
+# Desc: variables are tested within the script
+# Arguments: none
+# Date: Oct 2024
+
+echo "This script was called with $# parameters"
+echo "The script's name is $0" # automatically assigns the filename
+echo "The arguments are $@" 
+echo "The first argument is $1" #set in the terminal , put after file name (bash variables.sh 1 two)
+echo "The second argument is $2"
+echo "the third argument is $3" #arguments are set in the terminal 
+
+
+# Assigned Variables; Explicit declaration: 
+MY_VAR='some string' #redefined 
+echo 'the current value of the variable is:' $MY_VAR
+echo
+echo 'Please enter a new string' 
+read MY_VAR #like readline, variable is redefined
+echo
+echo 'the current value of the variable is:' $MY_VAR
+echo
+
+## Assigned Variables; Reading (multiple values) from user input: 
+echo 'Enter two numbers separated by spaces'
+read a b # input variables 
+echo
+echo 'you entered' $a 'and' $b ',their sum is:' #prints the sum 
+
+MY_SUM=$(expr $a + $b) #addition of both numbers 
+echo $MY_SUM
+
+
+**********************************************************************
+
+Testing variables.sh...
+
+Output (only first 500 characters): 
+
+
+**********************************************************************
+This script was called with 0 parameters
+The script's name is variables.sh
+The arguments are 
+The first argument is 
+The second argument is 
+the third argument is 
+the current value of the variable is: some string
+
+Please enter a new string
+
+the current value of the variable is:
+
+Enter two numbers separated by spaces
+
+you entered and ,their sum is:
+
+
+**********************************************************************
+
+Encountered error (or warning):
+
+***IGNORE IF THIS ERROR IS EXPECTED AS PART OF AN IN-CLASS EXERCISE***
+
+expr: syntax error: missing argument after ‘+’
+
+======================================================================
+Inspecting script file ConcatenateTwoFiles.sh...
+
+File contents are:
+
+**********************************************************************
+#!/bin/sh
+# Author: Saskia sp621@imperial.ac.uk
+# Script: ConcatenateTwoFiles
+# Desc: Combines two files, which are inputed, into a new file.
+# Arguments: three
+# Date: Oct 2024
+
+data_folder="../data" # access a data file from the data folder
+results_folder="../results" # sets a folder to send the results 
+
+# Check if three arguments are provided
+if [ "$#" -ne 3 ]; then # sees if the number of files is equal to 3
+    echo "You must provide exactly 3 files, the first two are combined under the name of the third file." # printed
+    exit 1
+else
+    # Define input and output file paths
+    input_file1="$data_folder/$1" # assigns the arguments to specific files
+    input_file2="$data_folder/$2" 
+    output_file="$results_folder/$3"
+    # Combine the files into the output file in the results folder
+    cat "$input_file1" "$input_file2" > "$output_file" # adds files 
+ 
+    echo "Merged File is $output_file"
+    echo "Done!"
+fi
+
+
+
+**********************************************************************
+
+Testing ConcatenateTwoFiles.sh...
+
+Output (only first 500 characters): 
+
+
+**********************************************************************
+You must provide exactly 3 files, the first two are combined under the name of the third file.
+
+**********************************************************************
+
+Code ran without errors
+
+Time consumed = 0.00415s
+
+======================================================================
+======================================================================
+Finished running scripts
+
+Ran into 2 errors
+
+======================================================================
+======================================================================
+
+FINISHED WEEKLY ASSESSMENT
+
+Current Points for the Week = 97.5
+
+NOTE THAT THESE ARE POINTS, NOT MARKS FOR THE WEEK!
