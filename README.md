@@ -90,36 +90,3 @@ Prerequisites
     R: For Week 3, ensure you have R installed along with the required R packages (e.g., dplyr, ggplot2).
     Bash: The Week 1 scripts require a Unix-based environment with basic Linux utilities.
 
-Directory Structure
-
-plaintext
-
-CMEECourseWork/
-│
-├── Week1/                  # Bash and Linux Shell Scripting
-│   ├── Code/
-│   ├── Data/
-│   ├── Results/
-│   └── Sandbox/
-│
-├── Week2/                  # Python (Part 1)
-│   ├── Code/
-│   ├── Data/
-│   ├── Results/
-│   └── Sandbox/
-│
-├── Week3/                  # R Programming
-│   ├── Code/
-│   ├── Data/
-│   ├── Results/
-│   └── Sandbox/
-│
-├── Week4/                  # Python (Part 2)
-│   ├── Code/
-│   ├── Data/
-│   ├── Results/
-│   └── Sandbox/
-│
-└── README.md               # This file
-
-License
