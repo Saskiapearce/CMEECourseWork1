@@ -12,7 +12,7 @@ import doctest
 #Define function
 def is_an_oak(name):
     """
-    Returns True if name starts with 'quercus '
+    Returns True if name starts with 'quercus'
 
     Examples:
     >>> is_an_oak('Quercus robur')
@@ -28,11 +28,13 @@ def is_an_oak(name):
     >>> is_an_oak('Pinus sylvestris')
     False
     """
-    return name.lower().startswith('quercus ')
+    oakname = name.lower().strip()
+    return oakname == 'quercus' or oakname.startswith('quercus')
+
 
 def main(argv): 
-    f = open('../data/TestOaksData.csv','r')
-    g = open('../data/JustOaksData.csv','w')
+    f = open('../Data/TestOaksData.csv','r')
+    g = open('../Results/JustOaksData.csv','w')
     taxa = csv.reader(f)
     csvwrite = csv.writer(g)
     oaks = set()

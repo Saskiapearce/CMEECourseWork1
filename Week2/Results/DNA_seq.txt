@@ -1,0 +1,8 @@
+Best alignment:
+GTCGTACCGTGA
+﻿GAGGTATATCTG
+Best score: 2
+Best alignment:
+.GTCGTACCGTGA
+﻿GAGGTATATCTG
+Best score: 4
