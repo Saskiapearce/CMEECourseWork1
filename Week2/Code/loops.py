@@ -2,7 +2,7 @@
 """Some simple loops using 'for' and 'while'"""
 __appname__ = "loops"
 __author__ = 'Saskia Pearce (sp621@imperial.ac.uk)'
-__version__ = '0.0.1'
+__version__ = '3.9'
 
 # FOR loops
 for i in range(5): #range 5 sets the amount of iterations 

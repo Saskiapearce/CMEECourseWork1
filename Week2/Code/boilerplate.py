@@ -2,7 +2,7 @@
 """A simple boilerplate program which prints, this is a boilerplate """
 __appname__ = 'BoilerplateApp'
 __author__ = '[Saskia (sp621@ic.ac.uk)]'
-__version__ = '0.0.1'
+__version__ = '3.9'
 __license__ = "license for this code/program"
 
 ##imports##

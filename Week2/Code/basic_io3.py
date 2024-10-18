@@ -2,7 +2,7 @@
 saving a complex object into a dictionary"""
 __appname__ = "basic_io3"
 __author__ = 'Saskia Pearce (sp621@imperial.ac.uk)'
-__version__ = '0.0.1'
+__version__ = '3.9'
 
 #############################
 # STORING OBJECTS
@@ -10,7 +10,7 @@ __version__ = '0.0.1'
 # To save an object (even complex) for later use
 my_dictionary = {"a key": 10, "another key": 11}
 
-import pickle
+import pickle 
 
 f = open('../sandbox/testp.p','wb') ## note the b: accept binary files
 pickle.dump(my_dictionary, f)

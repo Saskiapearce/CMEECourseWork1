@@ -2,7 +2,7 @@
 """A  program which assigns a name to a module using __name__ """
 __appname__ = 'Using_name'
 __author__ = '[Saskia (sp621@ic.ac.uk)]'
-__version__ = '0.0.1'
+__version__ = '3.9'
 __license__ = "license for this code/program"
 
 #Filename: using_name.py

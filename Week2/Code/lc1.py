@@ -1,7 +1,7 @@
 """ Comprehensions and lists """
 __appname__ = "lc1"
 __author__ = 'Saskia Pearce (sp621@imperial.ac.uk)'
-__version__ = '0.0.1'
+__version__ = '3.9'
 
 
 birds = ( ('Passerculus sandwichensis','Savannah sparrow',18.7),
@@ -15,7 +15,7 @@ birds = ( ('Passerculus sandwichensis','Savannah sparrow',18.7),
 # lists containing the latin names, common names and mean body masses for
 # each species in birds, respectively.
 # List comprehension to extract Latin names
-Latin = [i[0] for i in birds]
+Latin = [i[0] for i in birds] #the first values taken from the list 
 
 # List comprehension to extract common names
 Common = [i[1] for i in birds]
@@ -31,16 +31,16 @@ print("Masses:", Mass)
 # (2) Now do the same using conventional loops (you can choose to do this 
 # before 1 !). 
 
-latin = []
+latin = [] #create new empty list 
 common = []
 Mass = []
 
 for bird in birds: 
-    latin.append(bird[0])
+    latin.append(bird[0]) #add values to the list 
     common.append(bird[1])
     Mass.append(bird[2])
 
-print("Latin names:", latin)
+print("Latin names:", latin) #print result 
 print("Common names:", common)
 print("Masses:", Mass)
 

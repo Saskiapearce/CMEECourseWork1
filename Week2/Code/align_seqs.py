@@ -3,7 +3,7 @@
 #stripped). Hence, you can access your docstrings at run time.
 __appname__ = "align_seqs"
 __author__ = 'Saskia Pearce (sp621@imperial.ac.uk)'
-__version__ = '0.0.1'
+__version__ = '3.9'
 
 # Two example sequences to match
 # takes DNA sequences from csv file 
@@ -12,7 +12,7 @@ __version__ = '0.0.1'
 
 #search the csv for sequences, separated by commas
 
-import csv
+import csv #for inputing and exporting csv
 
 with open('../data/ .csv', 'r') as f: 
 
@@ -26,10 +26,10 @@ with open('../data/ .csv', 'r') as f:
 # Assign the longer sequence s1, and the shorter to s2
 # l1 is length of the longest, l2 that of the shortest
 
-seq2 = (sequences[0]) 
+seq2 = (sequences[0]) #sequence taken from csv file 
 seq1 = (sequences[1])
 
-l1 = len(seq1) 
+l1 = len(seq1) #assign longested sequence from file 
 l2 = len(seq2) 
 if l1 >= l2:
     s1 = seq1
@@ -42,6 +42,30 @@ else:
 # A function that computes a score by returning the number of matches starting
 # from arbitrary startpoint (chosen by user)
 def calculate_score(s1, s2, l1, l2, startpoint):
+    """
+    Calculate the alignment score between two DNA sequences starting from a specified position.
+
+    This function aligns a portion of sequence `s2` with sequence `s1` starting at the given 
+    `startpoint`. It compares the bases of both sequences, adds to the score if they match, 
+    and prints the alignment visually with '*' indicating a match and '-' indicating a mismatch.
+
+    Args:
+        s1 (str): The first DNA sequence (usually the longer one).
+        s2 (str): The second DNA sequence (usually the shorter one to be aligned with `s1`).
+        l1 (int): The length of sequence `s1`.
+        l2 (int): The length of sequence `s2`.
+        startpoint (int): The starting position in `s1` where the alignment with `s2` begins.
+
+    Returns:
+        int: The alignment score representing the number of matching bases between `s1` and `s2`.
+
+    Example:
+        >>> calculate_score("AGCTGAC", "GCT", 7, 3, 1)
+        .***
+        .GCT
+        AGCTGAC
+        3
+    """
     matched = "" # to hold string displaying alignements
     score = 0
     for i in range(l2):
@@ -75,7 +99,7 @@ my_best_score = -1 #alignment will always be higher than this starting score
 
 f = open('../Results/DNA_seq.txt','w')
 for i in range(l1): # Note that you just take the last alignment with the highest score
-    z = calculate_score(s1, s2, l1, l2, i)
+    z = calculate_score(s1, s2, l1, l2, i) #arguement in the file 
     if z > my_best_score:
         my_best_align = "." * i + s2 # think about what this is doing!
         my_best_score = z 
@@ -87,4 +111,4 @@ f.close()
 
 print(my_best_align)
 print(s1)
-print("Best score:", my_best_score)
+print("Best score:", my_best_score) # best score printed

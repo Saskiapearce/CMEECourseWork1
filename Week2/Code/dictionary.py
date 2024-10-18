@@ -1,7 +1,7 @@
 """ Using Dictionaries """
 __appname__ = "Dictionary"
 __author__ = 'Saskia Pearce (sp621@imperial.ac.uk)'
-__version__ = '0.0.1'
+__version__ = '3.9'
 
 taxa = { ('Myotis lucifugus','Chiroptera'),
          ('Gerbillus henleyi','Rodentia',),

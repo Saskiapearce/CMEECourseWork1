@@ -1,7 +1,7 @@
 """ Using Tuples """
 __appname__ = "Tuples"
 __author__ = 'Saskia Pearce (sp621@imperial.ac.uk)'
-__version__ = '0.0.1'
+__version__ = '3.9'
 
 birds = ( ('Passerculus sandwichensis','Savannah sparrow',18.7),
           ('Delichon urbica','House martin',19),
@@ -19,5 +19,5 @@ birds = ( ('Passerculus sandwichensis','Savannah sparrow',18.7),
 # ... etc.
 
 for i in range(4):
-        print("Latin name:", birds[(i)][0], "Common name:", birds[(i)][1], "Mass:", birds[(i)][2])
+        print("Latin name:", birds[(i)][0], "Common name:", birds[(i)][1], "Mass:", birds[(i)][2]) 
 

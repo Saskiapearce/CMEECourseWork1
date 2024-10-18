@@ -1,7 +1,7 @@
 """ Comprehensions and lists """
 __appname__ = "lc2"
 __author__ = 'Saskia Pearce (sp621@imperial.ac.uk)'
-__version__ = '0.0.1'
+__version__ = '3.9'
 
 # Average UK Rainfall (mm) for 1910 by month
 # http://www.metoffice.gov.uk/climate/uk/datasets
@@ -22,14 +22,14 @@ rainfall = (('JAN',111.4),
 # (1) Use a list comprehension to create a list of month,rainfall tuples where
 # the amount of rain was greater than 100 mm.
 rain = [(month, amount) for month, amount in rainfall if amount >100]
-print(rain)
+print(rain) #pinrts rainfall over 100 mm
 
  
 # (2) Use a list comprehension to create a list of just month names where the
 # amount of rain was less than 50 mm. 
 
 rain = [(month, amount) for month, amount in rainfall if amount <50]
-print(rain)
+print(rain) #prints rain fall less than 50 mm
 
  
 
@@ -40,17 +40,17 @@ rain100 = []
 
 for month, amount in rainfall: 
     if amount>100:
-        rain100.append((month, amount))
+        rain100.append((month, amount)) #add to new empty rain100 list 
 
 print(rain100)
 
-rain100 = []
+rain50 = []
 
 for month, amount in rainfall: 
     if amount<50:
-        rain100.append((month, amount))
+        rain50.append((month, amount)) #add to new empty rain100 list 
 
-print(rain100)
+print(rain50)
     
 
 # A good example output is:

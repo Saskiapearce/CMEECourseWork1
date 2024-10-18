@@ -3,7 +3,7 @@
 including local and global variables"""
 __appname__ = "scope"
 __author__ = 'Saskia Pearce (sp621@imperial.ac.uk)'
-__version__ = '0.0.1'
+__version__ = '3.9'
 
 #local variables
 y = 1
@@ -80,6 +80,7 @@ _a_global = 10
 print("Before calling a_function, outside the function, the value of _a_global is", _a_global)
 
 def a_function():
+    """This function modifies the global variable `_a_global` by assigning it the value 5."""
     global _a_global # global makes it modifyed out of the function
     _a_global = 5
     _a_local = 4
@@ -92,6 +93,7 @@ a_function()
 print("After calling a_function, outside the function, the value of _a_global now is", _a_global)
 
 def modify_list_1(some_list):
+    """Demonstrates reassignment of a list inside a function, which does not modify the original list."""
     print('got', some_list)
     some_list = [1, 2, 3, 4]
     print('set to', some_list)
@@ -107,6 +109,8 @@ modify_list_1(my_list)
 print('after, my_list =', my_list)
 
 def modify_list_3(some_list):
+    """
+    Appends the value 4 to a given list and prints the list before and after modification """
     print('got', some_list)
     some_list.append(4) # an actual modification of the list
     print('changed to', some_list)

@@ -4,7 +4,7 @@
 #stripped). Hence, you can access your docstrings at run time.
 __appname__ = "Control_flows"
 __author__ = 'Saskia Pearce (sp621@imperial.ac.uk)'
-__version__ = '0.0.1'
+__version__ = '3.9'
 
 import sys
 

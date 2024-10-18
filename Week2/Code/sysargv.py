@@ -2,7 +2,7 @@
 """A  program which uses the argv agrument variable to uphol arguemtns passed in the script when run """
 __appname__ = 'sysargv'
 __author__ = '[Saskia (sp621@ic.ac.uk)]'
-__version__ = '0.0.1'
+__version__ = '3.9'
 
 import sys 
 #imput, %run sysargv.py var1 var2

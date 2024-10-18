@@ -1,9 +1,11 @@
 """Debugging a peice of code, using a debugger"""
 __appname__ = "debugme"
 __author__ = 'Saskia Pearce (sp621@imperial.ac.uk)'
-__version__ = '0.0.1'
+__version__ = '3.9'
 
 def buggyfunc(x): #define the function 
+    """This function has an error when y reaches 0
+    default value """
     y = x 
     for i in range(x):
         y = y-1 

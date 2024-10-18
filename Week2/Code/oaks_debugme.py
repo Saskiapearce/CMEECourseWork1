@@ -3,9 +3,9 @@
 #stripped). Hence, you can access your docstrings at run time.
 __appname__ = "oaks_debugme"
 __author__ = 'Saskia Pearce (sp621@imperial.ac.uk)'
-__version__ = '0.0.1'
+__version__ = '3.9'
 
-import csv
+import csv #import depednencies for csv input and exports 
 import sys
 import doctest
 
@@ -29,15 +29,16 @@ def is_an_oak(name):
     False
     """
     oakname = name.lower().strip()
-    return oakname == 'quercus' or oakname.startswith('quercus')
+    return oakname == 'quercus' or oakname.startswith('quercus ') #strip gets rid of spaces before and after the genus name 
 
 
 def main(argv): 
-    f = open('../Data/TestOaksData.csv','r')
-    g = open('../Results/JustOaksData.csv','w')
+    """Processes a CSV file to extract rows containing oak species and writes them to a new CSV file."""
+    f = open('../Data/TestOaksData.csv','r') #read original input csv 
+    g = open('../Results/JustOaksData.csv','w') #write new csv 
     taxa = csv.reader(f)
     csvwrite = csv.writer(g)
-    oaks = set()
+    oaks = set() #creates new set for matches 
     for row in taxa:
         print(row)
         print ("The genus is: ") 
@@ -50,5 +51,5 @@ def main(argv):
     
 if __name__ == "__main__":
     import doctest
-    doctest.testmod()
+    doctest.testmod() #doc test tests the fucntion works above , if the genus names match usisng the test examples 
     status = main(sys.argv)

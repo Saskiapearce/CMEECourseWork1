@@ -4,7 +4,7 @@
 #stripped). Hence, you can access your docstrings at run time.
 __appname__ = "test_control_flows"
 __author__ = 'Saskia Pearce (sp621@imperial.ac.uk)'
-__version__ = '0.0.1'
+__version__ = '3.9'
 
 import sys
 import doctest #import the doctest module
@@ -30,6 +30,9 @@ def even_or_odd(x=0):
     return f"{x} is Odd!"
 
 def main(argv): 
+    """
+    Main function to test the `even_or_odd` function by printing results for specific values.
+    """
     print(even_or_odd(22))
     print(even_or_odd(33))
     return 0

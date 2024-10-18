@@ -3,7 +3,7 @@
 using loops and comprehensions"""
 __appname__ = "Oaks"
 __author__ = 'Saskia Pearce (sp621@imperial.ac.uk)'
-__version__ = '0.0.1'
+__version__ = '3.9'
 
 taxa = [ 'Quercus robur',
          'Fraxinus excelsior',
@@ -12,12 +12,15 @@ taxa = [ 'Quercus robur',
          'Quercus petraea',
        ]
 
+
 def is_an_oak(name):
-    return name.lower().startswith('quercus ')
+    """
+    Check if the given tree name corresponds to an oak species.
+    """
+    return name.lower().startswith('quercus')  # Ensure consistent indentation with 4 spaces
 
-#using for loops 
 
-##Using for loops
+
 oaks_loops = set()
 for species in taxa:
     if is_an_oak(species):
