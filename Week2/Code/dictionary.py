@@ -1,4 +1,9 @@
-taxa = [ ('Myotis lucifugus','Chiroptera'),
+""" Using Dictionaries """
+__appname__ = "Dictionary"
+__author__ = 'Saskia Pearce (sp621@imperial.ac.uk)'
+__version__ = '0.0.1'
+
+taxa = { ('Myotis lucifugus','Chiroptera'),
          ('Gerbillus henleyi','Rodentia',),
          ('Peromyscus crinitus', 'Rodentia'),
          ('Mus domesticus', 'Rodentia'),
@@ -8,34 +13,28 @@ taxa = [ ('Myotis lucifugus','Chiroptera'),
          ('Lyacon pictus', 'Carnivora'),
          ('Arctocephalus gazella', 'Carnivora'),
          ('Canis lupus', 'Carnivora'),
-        ]
+         }
 
-taxa_dic = {}
-    
-def order(name):
-    for species, order in taxa: 
-        if order not in taxa_dic:
-            taxa_dic[order] = []
-            taxa_dic[order].append(species)    
 
-print(taxa_dic)
 
-#taxa is a set, we want to make a dictionary
+taxa_dic = {} # create an empty dictionary to add to
 
-taxa_dic = dir([species for species in taxa if not in taxa_dic])
-print(taxa_dic)
+# Populate taxa_dic with orders mapped to sets of species
+for species, order in taxa:
+    if order not in taxa_dic:
+        taxa_dic[order] = set()  # Create a set for this order if it doesn't already exist
+    taxa_dic[order].add(species)  # Add the species to the appropriate order set
 
-# Write a python script to populate a dictionary called taxa_dic derived from
-# taxa so that it maps order names to sets of taxa and prints it to screen.
-# 
-# An example output is:
-#  
-# 'Chiroptera' : set(['Myotis lucifugus']) ... etc. 
-# OR, 
-# 'Chiroptera': {'Myotis  lucifugus'} ... etc
+# Print the resulting dictionary
+for order, species_set in taxa_dic.items():
+    print("\n" f"'{order}': {species_set}")
 
-#### Your solution here #### 
 
-# Now write a list comprehension that does the same (including the printing after the dictionary has been created)  
+
+taxa_dic = {order: {species for species, o in taxa if o == order} for _, order in taxa}
+
+# Print the resulting dictionary
+for order, species_set in taxa_dic.items():
+    print("\n" f"'{order}': {species_set}")
  
-#### Your solution here #### 
+

@@ -1,4 +1,10 @@
-# finds just those taxa which are oak trees from a list of species
+#!/usr/bin/env python3
+"""Finds just those taxa which are oak trees from a list of species, 
+using loops and comprehensions"""
+__appname__ = "Oaks"
+__author__ = 'Saskia Pearce (sp621@imperial.ac.uk)'
+__version__ = '0.0.1'
+
 taxa = [ 'Quercus robur',
          'Fraxinus excelsior',
          'Pinus sylvestris',

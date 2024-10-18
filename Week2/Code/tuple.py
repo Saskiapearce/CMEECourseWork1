@@ -1,3 +1,8 @@
+""" Using Tuples """
+__appname__ = "Tuples"
+__author__ = 'Saskia Pearce (sp621@imperial.ac.uk)'
+__version__ = '0.0.1'
+
 birds = ( ('Passerculus sandwichensis','Savannah sparrow',18.7),
           ('Delichon urbica','House martin',19),
           ('Junco phaeonotus','Yellow-eyed junco',19.5),

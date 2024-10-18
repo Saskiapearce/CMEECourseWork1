@@ -1,4 +1,11 @@
+#!/usr/bin/env python3
+"""demonstartions of variable scopes, 
+including local and global variables"""
+__appname__ = "scope"
+__author__ = 'Saskia Pearce (sp621@imperial.ac.uk)'
+__version__ = '0.0.1'
 
+#local variables
 y = 1
 x = 0
 for y in range(10):
@@ -37,8 +44,6 @@ def a_function(y):
     for i in range(y):
         x += 1
     return x
-
-%whos
 
 a_function(10)
 x =a_function(10)
@@ -122,5 +127,3 @@ print(x)
 x = [i.lower() for i in ["list", "comprehensions", "are", "cool"]]
 print
 #basically a shortened version of a loop
-
-
