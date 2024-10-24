@@ -5,18 +5,40 @@
 # Date: Oct 2024
 
 #1
-wc -l ../data/ *.fasta # counts the number of lines 
+# Counts the number of lines in all FASTA files located in ../data/.
+# wc -l counts the number of lines in files 
+wc -l ../data/ *.fasta 
 
 #2
-tail -n +2 ../data/ *.fasta # print second line onwards
+# Prints all lines from the FASTA files starting from the second line onward.
+# The `tail -n +2` command skips the first line ( the fasta '>'),
+# and prints all subsequent lines (the actual nucleotide sequences).
+tail -n +2 ../data/ *.fasta 
 
 #3
-wc -c ../data/ *.fasta # counts the sequence length (characters) of genome
+# Counts the number of characters (including newline characters) in the FASTA files.
+# The `wc -c` command returns the total byte count of each file, which corresponds to the character count.
+# This includes both the header line and the sequence lines.
+wc -c ../data/ *.fasta # wc -c counts the number of bytes/characters in the file.
 
 #4
-tail -n +2 ../data/ *.fasta | tr -d '\n' | grep -o "ATGC" | wc -l # 'count ATGC' #counts instances of "ATGC" in the line
+# Counts the number of occurrences of the string "ATGC" in the FASTA files.
+# - `tail -n +2` skips the header line
+# - `tr -d '\n'` removes newline characters to join all lines into a single continuous string.
+# - `grep -o "ATGC"` searches for each occurrence of "ATGC" and outputs it.
+# - `wc -l` counts the number of lines produced by grep, which corresponds to the number of "ATGC" matches.
+tail -n +2 ../data/ *.fasta | tr -d '\n' | grep -o "ATGC" | wc -l # 'count ATGC' in the sequences.
 
-#5 
-echo "scale=6; $(tail -n +2 ../data/ *.fasta | tr -d '\n' | grep -o -E "A|T" | wc -l) / $(tail -n +2 E.coli.fasta | tr -d '\n' | grep -o -E "G|C" | wc -l)" | bc # AT/GC ratio calculated using devision of line lengths 
+#5
+# Calculates the ratio of the number of 'A' and 'T' nucleotides to 'G' and 'C' nucleotides in the sequences.
+# The steps involved are:
+# - `tail -n +2` skips the header line and processes only the sequence lines.
+# - `tr -d '\n'` removes all newline characters, creating a single continuous string of nucleotides.
+# - `grep -o -E "A|T"` finds all occurrences of 'A' and 'T' and outputs each as a new line.
+# - `wc -l` counts the number of occurrences of 'A' and 'T'.
+# - The same is done for 'G' and 'C' nucleotides.
+# - `echo "scale=6; ... / ..."` calculates the ratio of 'A' and 'T' to 'G' and 'C' with a precision of 6 decimal places.
+# - `bc` is used for performing the floating-point division.
+echo "scale=6; $(tail -n +2 ../data/ *.fasta | tr -d '\n' | grep -o -E 'A|T' | wc -l) / $(tail -n +2 ../data/ *.fasta | tr -d '\n' | grep -o -E 'G|C' | wc -l)" | bc # AT/GC ratio calculated using division of nucleotide counts.
 
  

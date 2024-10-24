@@ -5,8 +5,8 @@
 # Arguments: none
 # Date: Oct 2024
 
-MSG1="Hello"
+MSG1="Hello" #setting first variable
 MSG2=$USER #user is an example of environemtnal variable, which cant change
-echo "$USG1 $MSG2" # "Hello, user"
+echo "$MSG1 $MSG2" # "Hello, user"
 echo "Hello $USER" # print user name 
 echo 
