@@ -35,446 +35,278 @@ The repository contains 10 primary scripts located in the Code folder. The Data 
 
 apply1.R
 
-Purpose:
-Calculates the mean and variance for each row and the mean for each column of a randomly generated matrix.
+    Purpose: Calculates the mean and variance for each row and the mean for each column of a randomly generated matrix.
+    Usage: Run the script directly in R to generate a matrix, compute row and column statistics, and display results.
+    Input: No external input. A 10x10 matrix is generated internally.
+    Output:
+        Prints the mean of each row.
+        Prints the variance of each row.
+        Prints the mean of each column.
+    Example Run:
 
-Usage:
-Run the script directly in R to generate a matrix, compute row and column statistics, and display results.
+    r
 
-Input:
-No external input. A 10x10 matrix is generated internally.
-
-Output:
-Prints:
-
-    The mean of each row.
-    The variance of each row.
-    The mean of each column.
-
-Example Run:
-
-r
-
-source("apply1.R")
-# Output will show RowMeans, RowVars, and ColMeans
+    source("apply1.R")
+    # Output will show RowMeans, RowVars, and ColMeans
 
 apply2.R
 
-Purpose:
-Applies a custom function SomeOperation to each row of a matrix. This function multiplies each row by 100 if the row sum is greater than 0, otherwise, it leaves the row unchanged.
+    Purpose: Applies a custom function SomeOperation to each row of a matrix, multiplying rows by 100 if their sum is greater than 0, or leaving them unchanged otherwise.
+    Usage: Run the script directly to apply SomeOperation to each row of a randomly generated 10x10 matrix.
+    Input: No external input. A 10x10 matrix is generated within the script.
+    Output: Prints the matrix after applying SomeOperation to each row.
+    Example Run:
 
-Usage:
-Run the script directly to apply SomeOperation to each row of a randomly generated 10x10 matrix.
+    r
 
-Input:
-No external input. A 10x10 matrix is generated within the script.
-
-Output:
-Prints the matrix after applying SomeOperation to each row.
-
-Example Run:
-
-r
-
-source("apply2.R")
-# Output will show the transformed matrix
+    source("apply2.R")
+    # Output will show the transformed matrix
 
 basic_io.R
 
-Purpose:
-Demonstrates basic input and output (I/O) operations in R, including reading and writing CSV files, checking the structure of loaded data, and saving modified data.
+    Purpose: Demonstrates basic input and output (I/O) operations in R, including reading and writing CSV files, checking data structure, and saving modified data.
+    Usage: Run the script in an R environment that has access to ../data/trees.csv to read, view, and write data.
+    Input:
+        ../data/trees.csv: A CSV file containing tree data.
+    Output:
+        Prints various data structures to the console, including class and structure information for Mydata.
+        Saves a modified version of MyData as ../Results/MyData.csv.
+    Dependencies: Requires trees.csv in the ../data/ directory.
+    Example Run:
 
-Usage:
-Run the script in an R environment that has access to ../data/trees.csv to read, view, and write data.
+    r
 
-Input:
-
-    ../data/trees.csv: A CSV file containing tree data.
-
-Output:
-
-    Various data structures printed to the console, including class and structure information for Mydata.
-    Saves a modified version of MyData as ../Results/MyData.csv.
-
-Dependencies:
-Requires trees.csv in the ../data/ directory.
-
-Example Run:
-
-r
-
-source("basic_io.R")
-# Console output displays information on Mydata, and MyData.csv is saved in ../Results
+    source("basic_io.R")
+    # Console output displays information on Mydata, and MyData.csv is saved in ../Results
 
 boilerplate.R
 
-Purpose:
-Provides a template function MyFunction that takes two arguments, prints their types, and returns them. This script serves as a boilerplate example for function creation in R.
+    Purpose: Provides a template function MyFunction that takes two arguments, prints their types, and returns them.
+    Usage: Run the script directly to execute MyFunction with sample arguments.
+    Input: No external input. Sample arguments are provided within the script.
+    Output: Prints the type of each argument passed to MyFunction.
+    Example Run:
 
-Usage:
-Run the script directly to execute MyFunction with sample arguments.
+    r
 
-Input:
-No external input. Sample arguments are provided within the script.
-
-Output:
-Prints the type of each argument passed to MyFunction.
-
-Example Run:
-
-r
-
-source("boilerplate.R")
-# Output:
-# Arguement 1 is a numeric
-# Arguement 2 is a numeric
-# Arguement Riki is a character
-# Arguement Tiki is a character
+    source("boilerplate.R")
+    # Output:
+    # Argument 1 is a numeric
+    # Argument 2 is a numeric
+    # Argument Riki is a character
+    # Argument Tiki is a character
 
 break.R
 
-Purpose:
-Demonstrates a while loop in R that continues incrementing a counter i and printing its value until i reaches 10, at which point the loop breaks.
+    Purpose: Demonstrates a while loop in R that increments a counter i and prints its value until i reaches 10, at which point the loop breaks.
+    Usage: Run the script directly to observe the loop behavior and how it breaks when i reaches 10.
+    Input: No external input.
+    Output: Prints the values of i from 0 to 9, with a message indicating each value.
+    Example Run:
 
-Usage:
-Run the script directly to observe the loop behavior and how it breaks when i reaches 10.
+    r
 
-Input:
-No external input.
-
-Output:
-Prints the values of i from 0 to 9, with a message indicating each value.
-
-Example Run:
-
-r
-
-source("break.R")
-# Output:
-# i equals 0
-# i equals 1
-# ...
-# i equals 9
-
+    source("break.R")
+    # Output:
+    # i equals 0
+    # i equals 1
+    # ...
+    # i equals 9
 
 browse.R
 
-Purpose:
-Simulates exponential growth over a specified number of generations and allows interactive debugging with the browser() function.
-
-Usage:
-Run the script to simulate exponential growth with customizable parameters (N0, r, and generations), using browser() to step through each iteration.
-
-Input:
-
-    No external input is required.
-    Parameters:
+    Purpose: Simulates exponential growth over a specified number of generations and allows interactive debugging with the browser() function.
+    Usage: Run the script to simulate exponential growth with customizable parameters (N0, r, and generations).
+    Input:
         N0: Initial population size.
         r: Growth rate.
         generations: Number of generations to simulate.
+    Output: A line plot showing exponential growth over the specified generations.
+    Example Run:
 
-Output:
+    r
 
-    A line plot showing exponential growth over the specified generations.
-
-Dependencies:
-No additional dependencies.
-
-Example Run:
-
-r
-
-source("browse.R")
-# An interactive debug session will open at each generation
+    source("browse.R")
+    # An interactive debug session will open at each generation
 
 control_flow.R
 
-Purpose:
-Demonstrates basic control flow in R, including if statements, for loops, and while loops.
+    Purpose: Demonstrates basic control flow in R, including if statements, for loops, and while loops.
+    Usage: Run the script to observe examples of control flow structures.
+    Input: No external input; the script generates its own data.
+    Output: Prints results of various conditional checks and loops to the console.
+    Example Run:
 
-Usage:
-Run the script to observe examples of if statements, iterative loops, and conditional checks.
+    r
 
-Input:
-No external input. The script generates its own data for demonstrations.
-
-Output:
-
-    Prints results of various conditional checks and loops to the console.
-
-Example Run:
-
-r
-
-source("control_flow.R")
-# Console output shows results of `if` statements, `for` loops, and `while` loops.
+    source("control_flow.R")
+    # Console output shows results of if statements, for loops, and while loops
 
 DataWrang.R
 
-Purpose:
-Performs data wrangling on a dataset by cleaning, transforming, and reshaping it into a tidy format.
+    Purpose: Performs data wrangling by cleaning, transforming, and reshaping data into a tidy format.
+    Usage: Run the script to import and wrangle data from the PoundHillData.csv file.
+    Input:
+        ../data/PoundHillData.csv: Raw dataset.
+        ../data/PoundHillMetaData.csv: Metadata for context.
+    Output:
+        Prints wrangled data to the console.
+        Creates a tidy dataset (MyWrangledData).
+    Dependencies: Requires tidyverse for data manipulation.
+    Example Run:
 
-Usage:
-Run the script to import and wrangle data from the PoundHillData.csv file, converting it to a tidy format for analysis.
+    r
 
-Input:
-
-    ../data/PoundHillData.csv: Raw dataset for wrangling.
-    ../data/PoundHillMetaData.csv: Metadata for additional context.
-
-Output:
-
-    Prints the wrangled data to the console.
-    Final tidy dataset (MyWrangledData) is created.
-
-Dependencies:
-Requires tidyverse package for data manipulation.
-
-Example Run:
-
-r
-
-source("DataWrang.R")
-# Console output shows wrangled data, filtered subsets, and summaries
+    source("DataWrang.R")
+    # Console output shows wrangled data, filtered subsets, and summaries
 
 Girko.R
 
-Purpose:
-Plots the eigenvalues of a random matrix and overlays them with an ellipse to illustrate Girko’s circular law.
+    Purpose: Plots the eigenvalues of a random matrix and overlays them with an ellipse to illustrate Girko’s circular law.
+    Usage: Run the script to generate a random matrix, compute eigenvalues, and plot the results with a circular boundary.
+    Input: No external input.
+    Output: A plot showing the eigenvalues of the random matrix and an ellipse representing the theoretical boundary.
+    Dependencies: Requires tidyverse and ggplot2 for plotting.
+    Example Run:
 
-Usage:
-Run the script to generate a random matrix, compute eigenvalues, and plot the results with a circular boundary.
+    r
 
-Input:
-No external input. Generates a random matrix internally.
-
-Output:
-
-    A plot showing the eigenvalues of the random matrix and an ellipse representing the theoretical boundary.
-
-Dependencies:
-Requires tidyverse and ggplot2 packages for data manipulation and visualization.
-
-Example Run:
-
-r
-
-source("Girko.R")
-# Displays a plot with eigenvalues and an elliptical boundary
+    source("Girko.R")
+    # Displays a plot with eigenvalues and an elliptical boundary
 
 MyBars.R
 
-Purpose:
-Creates a bar plot with multiple line ranges representing data series and annotates it with labels.
+    Purpose: Creates a bar plot with multiple line ranges representing data series, with annotations.
+    Usage: Run the script to read Results.txt, process the data, and plot multiple line ranges with colors and labels.
+    Input:
+        ../data/Results.txt: Data file with columns for plotting.
+    Output: A bar plot with line ranges and annotations.
+    Dependencies: Requires tidyverse and ggplot2 for plotting.
+    Example Run:
 
-Usage:
-Run the script to read Results.txt, process the data, and plot multiple line ranges with custom colors and labels.
+    r
 
-Input:
+    source("MyBars.R")
+    # Displays a customized bar plot with line ranges and labels
 
-    ../data/Results.txt: A data file containing columns for plotting.
+next.R
 
-Output:
+    Purpose: Demonstrates the next statement in R to skip iterations in a loop. Only prints odd numbers from 1 to 10.
+    Usage: Run the script to see how next is used to skip even numbers.
+    Input: No external input required.
+    Output: Prints only odd numbers between 1 and 10.
+    Example Run:
 
-    A bar plot with multiple line ranges and annotations.
+    r
 
-Dependencies:
-Requires tidyverse and ggplot2 packages.
-
-Example Run:
-
-r
-
-source("MyBars.R")
-# Displays a customized bar plot with line ranges and labels
-
-next.R
-
-Purpose:
-Demonstrates the use of the next statement in R to skip iterations in a loop. This script only prints odd numbers between 1 and 10.
-
-Usage:
-Run the script to see how next is used to skip even numbers in a for loop.
-
-Input:
-No external input required.
-
-Output:
-Prints only odd numbers from 1 to 10.
-
-Example Run:
-
-r
-
-source("next.R")
-# Output:
-# [1] 1
-# [1] 3
-# [1] 5
-# [1] 7
-# [1] 9
+    source("next.R")
+    # Output:
+    # [1] 1
+    # [1] 3
+    # [1] 5
+    # [1] 7
+    # [1] 9
 
 plotLin.R
 
-Purpose:
-Generates a linear dataset with noise, performs linear regression, and visualizes the data and regression line with a color gradient based on residuals.
+    Purpose: Generates a linear dataset with noise, performs linear regression, and visualizes data with a regression line and color gradient based on residuals.
+    Usage: Run the script to create a scatter plot with a regression line and color gradient.
+    Input: None; data is generated within the script.
+    Output: A plot showing the linear regression line with residual-based color shading.
+    Dependencies: Requires ggplot2 for plotting.
+    Example Run:
 
-Usage:
-Run the script to create a scatter plot with a regression line and gradient shading based on the residuals.
+    r
 
-Input:
-No external input required; data is generated within the script.
-
-Output:
-A plot showing the linear regression line with residual-based color shading.
-
-Dependencies:
-Requires ggplot2 for plotting.
-
-Example Run:
-
-r
-
-source("plotLin.R")
-# Outputs a ggplot with a linear regression line and color gradient
+    source("plotLin.R")
+    # Outputs a ggplot with a linear regression line and color gradient
 
 preallocate.R
 
-Purpose:
-Compares execution time between a function that pre-allocates memory for a vector and one that does not, demonstrating the efficiency of pre-allocation.
+    Purpose: Compares execution time between a function with pre-allocated memory and one without, to demonstrate efficiency.
+    Usage: Run the script to see time differences between two vector assignment methods.
+    Input: No external input.
+    Output: Prints time taken for each function and displays vector contents and memory usage per iteration.
+    Dependencies: Requires ggplot2 for the final plot.
+    Example Run:
 
-Usage:
-Run the script to see the time differences between the two methods of vector assignment.
+    r
 
-Input:
-No external input required.
-
-Output:
-Prints time taken for each function to complete and displays vector contents and memory usage during each iteration.
-
-Dependencies:
-Requires ggplot2 for the plot at the end.
-
-Example Run:
-
-r
-
-source("preallocate.R")
-# Output shows time taken by each function and memory allocation details
+    source("preallocate.R")
+    # Output shows time taken by each function and memory allocation details
 
 R_conditionals.R
 
-Purpose:
-Provides utility functions to check if a number is even, a power of 2, or prime, demonstrating conditional statements in R.
+    Purpose: Provides functions to check if a number is even, a power of 2, or prime.
+    Usage: Run the script to call each function with example arguments.
+    Input: Numeric values as arguments.
+    Output: Prints results indicating if numbers are even, powers of 2, or prime.
+    Example Run:
 
-Usage:
-Run the script to call each function with example arguments, or call the functions independently with custom values.
+    r
 
-Input:
-No external input required. Functions accept numeric values as arguments.
-
-Output:
-Prints results indicating whether numbers are even, powers of 2, or prime.
-
-Example Run:
-
-r
-
-source("R_conditionals.R")
-is.even(6)        # Output: "6 is even!"
-is.power2(4)      # Output: "4 is a power of 2!"
-is.prime(3)       # Output: "3 is a prime!"
+    source("R_conditionals.R")
+    is.even(6)        # Output: "6 is even!"
+    is.power2(4)      # Output: "4 is a power of 2!"
+    is.prime(3)       # Output: "3 is a prime!"
 
 sample.R
 
-Purpose:
-Performs a sampling experiment from a population, demonstrating different methods of iteration (with and without preallocation, and using sapply and lapply).
+    Purpose: Performs a sampling experiment and demonstrates iteration methods, including preallocation and vectorization with sapply and lapply.
+    Usage: Run the script to compare execution times of different sampling methods.
+    Input: No external input; generates a random population.
+    Output:
+        Histogram of the population distribution.
+        Execution times for each sampling method.
+    Example Run:
 
-Usage:
-Run the script to compare execution times of different methods for running repeated sampling experiments.
+    r
 
-Input:
-No external input. The script generates a population of random values.
-
-Output:
-
-    Histogram of the population distribution.
-    Execution times for each sampling method.
-
-Example Run:
-
-r
-
-source("sample.R")
-# Outputs execution times and displays histogram of population
+    source("sample.R")
+    # Outputs execution times and displays histogram of population
 
 TreeHeight.R
 
-Purpose:
-Calculates the heights of trees based on angle and distance measurements using trigonometry, then saves the results to a CSV file.
+    Purpose: Calculates tree heights based on angle and distance measurements, then saves results to a CSV file.
+    Usage: Run the script to read a CSV file with tree data, calculate heights, and save results.
+    Input:
+        ../data/trees.csv: CSV file with angles and distances.
+    Output:
+        Prints calculated tree heights.
+        Saves results to ../results/TreedataR.csv.
+    Example Run:
 
-Usage:
-Run the script to read a CSV file with tree data, calculate heights, and save the results.
+    r
 
-Input:
-
-    ../data/trees.csv: CSV file containing angles and distances.
-
-Output:
-
-    Prints calculated tree heights.
-    Saves results to ../results/TreedataR.csv.
-
-Example Run:
-
-r
-
-source("TreeHeight.R")
-# Console outputs calculated heights and saves them in TreedataR.csv
+    source("TreeHeight.R")
+    # Console outputs calculated heights and saves them in TreedataR.csv
 
 try.R
 
-Purpose:
-Demonstrates error handling in R using try, sampling from a population and attempting to calculate the mean only if the sample has sufficient unique values.
+    Purpose: Demonstrates error handling in R using try, sampling a population and calculating the mean only if the sample has sufficient unique values.
+    Usage: Run the script to observe error handling when samples lack unique values.
+    Input: No external input; generates a random population.
+    Output: Prints the mean of the sample if calculated, or an error message.
+    Example Run:
 
-Usage:
-Run the script to observe error handling in cases where the sample lacks sufficient unique values.
+    r
 
-Input:
-No external input required; the script generates a population of random values.
-
-Output:
-Prints the mean of the sample if calculated; otherwise, displays an error message.
-
-Example Run:
-
-r
-
-source("try.R")
-# Console output shows mean values or error messages based on sample uniqueness
+    source("try.R")
+    # Console output shows mean values or error messages based on sample uniqueness
 
 Vectorize1.R
 
-Purpose:
-Compares the time taken to sum all elements of a matrix using a loop versus a vectorized function.
+    Purpose: Compares time taken to sum all matrix elements using a loop versus a vectorized function.
+    Usage: Run the script to see the execution time difference.
+    Input: No external input; generates a random matrix.
+    Output: Prints time taken for both summing methods.
+    Example Run:
 
-Usage:
-Run the script to see the difference in execution time between the two summing methods.
-
-Input:
-No external input required; the script generates a matrix of random values.
-
-Output:
-Prints the time taken to perform the summing operation for both methods.
-
-Example Run:
-
-r
+    r
 
 source("Vectorize1.R")
 # Console output shows execution times for both summing methods
 
-Author Information:
-
-    Name: Saskia Pearce
-    Contact: sp621@ic.ac.uk
+Author infomation: 
+	Saskia Pearce 
+	Sp621@ic.ac.uk

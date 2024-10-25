@@ -36,270 +36,121 @@ Overview of the scripts:
 
 Boilerplate.sh
 
-Purpose:
-Prints a sample text as a demonstration of shell script syntax.
-
-Usage:
-Run without arguments to display a sample text output.
-
-Input:
-None.
-
-Output:
-A simple string: "This is a boilerplate".
-
-Example:
-
-bash
-
-bash Boilerplate.sh
+    Purpose: Prints lines of text as a demonstration of shell script syntax.
+    Usage: Run the script without arguments.
+    Input: None.
+    Output: Displays the text "This is a boilerplate".
+    Dependencies: None.
+    Example: bash Boilerplate.sh
+    Output: This is a boilerplate.
 
 variables.sh
 
-Purpose:
-Prints a given string and adds two provided numbers.
-
-Usage:
-Takes one string and two numerical inputs.
-
-Input:
-A string and two numbers.
-
-Output:
-Prints the provided string and the sum of the two numbers.
-
-Example:
-
-bash
-
-bash variables.sh "Hello" 6 7
-# Output:
-# Hello
-# 13
+    Purpose: Prints a given string and adds two provided numbers.
+    Usage: Run the script with a string and two numbers as arguments.
+    Input: One string and two numbers.
+    Output: Prints the provided string and the sum of the two numbers.
+    Dependencies: None.
+    Example: bash variables.sh "Hello" 6 7
+    Output: Hello, 13
 
 MyExampleScript.sh
 
-Purpose:
-Displays a greeting message using a predefined message and the current user’s name (an environmental variable).
-
-Usage:
-Run the script to print a customized greeting for the current user.
-
-Input:
-No external input; uses the USER environmental variable.
-
-Output:
-Prints two greeting messages:
-
-    "Hello <username>" using USER variable.
-    "Hello <username>" using direct echo statement.
-
-Dependencies:
-None.
-
-Example:
-
-bash
-
-bash MyExampleScript.sh
-# Output:
-# Hello <username>
-# Hello <username>
+    Purpose: Displays a greeting message using a predefined message variable and the current user’s name (environmental variable).
+    Usage: Run the script directly.
+    Input: No external input; the USER environmental variable is used.
+    Output: Prints two greetings with the current user’s name.
+    Dependencies: None.
+    Example: bash MyExampleScript.sh
+    Output:
+    Hello <username>
+    Hello <username>
 
 tabtocsv.sh
 
-Purpose:
-Converts a tab-delimited file to a comma-separated CSV file, saving it in the results directory.
-
-Usage:
-Run the script with a single .tab file as an argument.
-
-Input:
-A .tab file in the data directory.
-
-Output:
-A CSV file saved in the results directory with _2.csv appended to the filename.
-
-Dependencies:
-None.
-
-Example:
-
-bash
-
-bash tabtocsv.sh example.tab
-# Output:
-# Converting tab file to csv file...
-# Done! File saved to ../results/example_2.csv
+    Purpose: Converts a tab-delimited file to a comma-separated file (CSV) and saves it in the results directory.
+    Usage: Run the script with a single .tab file as an argument.
+    Input: A tab-delimited .tab file located in the data directory.
+    Output: Saves a CSV file in the results directory with _2.csv appended to the original filename.
+    Dependencies: None.
+    Example: bash tabtocsv.sh example.tab
+    Output:
+    Converting tab file to csv file...
+    Done! File saved to ../results/example_2.csv
 
 CountLine.sh
 
-Purpose:
-Counts the number of lines in a specified file located in the data directory.
-
-Usage:
-Run the script with a single filename as an argument.
-
-Input:
-A single file provided as an argument.
-
-Output:
-Displays the number of lines in the specified file.
-
-Dependencies:
-None.
-
-Example:
-
-bash
-
-bash CountLine.sh example.txt
-# Output:
-# Counting lines in file
-# The file example.txt has [Number of lines] lines
-
-If no file is specified or more than one argument is provided:
-
-bash
-
-bash CountLine.sh
-# Output:
-# Put in 1 single file.
+    Purpose: Counts the number of lines in a specified file located in the data directory.
+    Usage: Run the script with a single filename as an argument.
+    Input: A single file provided as an argument.
+    Output: Displays the number of lines in the specified file.
+    Dependencies: None.
+    Example: bash CountLine.sh example.txt
+    Output: Counting lines in file. The file example.txt has [Number of lines] lines.
+    If no file is specified or more than one argument is provided:
+    bash CountLine.sh
+    Output: Put in 1 single file.
 
 ConcatenateTwoFiles.sh
 
-Purpose:
-Merges two specified files into a new file in the results directory.
-
-Usage:
-
-bash
-
-./ConcatenateTwoFiles.sh <file1> <file2> <file3>
-
-Input:
-Three file names; the first two files are combined and saved under the name of the third file.
-
-Output:
-A new merged file in the results directory.
-
-Example:
-
-bash
-
-bash ConcatenateTwoFiles.sh file1.txt file2.txt combined.txt
+    Purpose: Merges two specified files into a new file in the results directory.
+    Usage: Run the script with three filenames as arguments.
+    Input: Three filenames; the first two will be combined and saved under the name of the third.
+    Output: The merged file is saved to results.
+    Dependencies: None.
+    Example: bash ConcatenateTwoFiles.sh file1.txt file2.txt combined.txt
 
 tiff2png.sh
 
-Purpose:
-Converts all .tif files in the current directory to .png format.
-
-Usage:
-Run the script in a directory containing .tif files.
-
-Input:
-One or more .tif files.
-
-Output:
-.png files with the same base name as the .tif files.
-
-Dependencies:
-Requires ImageMagick for the convert command.
-
-Example:
-
-bash
-
-bash tiff2png.sh
-# Output:
-# Converting file1.tif
-# Converting file2.tif
-# ...
-# (or "No .tif files found in the directory" if no .tif files are present)
+    Purpose: Converts all .tif files in the current directory to .png format.
+    Usage: Run the script in a directory containing .tif files.
+    Input: One or more .tif files in the current directory.
+    Output: .png files with the same base name as the .tif files.
+    Dependencies: Requires ImageMagick for the convert command.
+    Example: bash tiff2png.sh
+    Output: Converting file1.tif
+    Converting file2.tif
+    (or "No .tif files found in the directory" if none are present)
 
 csvtospace.sh
 
-Purpose:
-Converts a comma-delimited CSV file to a space-delimited text file.
-
-Usage:
-Run the script with a CSV filename to convert it to a space-delimited file in the results directory.
-
-Input:
-A .csv file in the data directory.
-
-Output:
-A space-delimited .txt file in the results directory with _2 appended to the filename.
-
-Dependencies:
-None.
-
-Example:
-
-bash
-
-bash csvtospace.sh example.csv
-# Output:
-# Converting comma-delimited CSV file to space-delimited ...
-# Done! File saved to ../results/example_2.txt
+    Purpose: Converts a comma-delimited CSV file to a space-delimited text file.
+    Usage: Run the script with a CSV filename as an argument.
+    Input: A .csv file in the data directory.
+    Output: A space-delimited .txt file saved in the results directory with _2 appended to the filename.
+    Dependencies: None.
+    Example: bash csvtospace.sh example.csv
+    Output: Converting comma-delimited CSV file to space-delimited ...
+    Done! File saved to ../results/example_2.txt
 
 Translate.sh
 
-Purpose:
-Performs text transformations, including removing excess spaces, deleting all 'a's, converting text to uppercase, and keeping only numbers.
-
-Usage:
-Run the script to apply transformations to predefined text strings.
-
-Input:
-None; the script includes predefined text examples.
-
-Output:
-Prints transformed text for each example.
-
-Dependencies:
-None.
-
-Example:
-
-bash
-
-bash Translate.sh
-# Output:
-# Remove excess spaces.
-# Remove ll the 's
-# SET TO UPPERCASE
-# 10.00 1.33
+    Purpose: Performs text transformations, including removing excess spaces, deleting all 'a's, converting text to uppercase, and keeping only numbers.
+    Usage: Run the script to apply transformations to predefined text.
+    Input: No external input; uses predefined examples.
+    Output: Prints transformed text for each example.
+    Dependencies: None.
+    Example: bash Translate.sh
+    Output:
+    Remove excess spaces.
+    Remove ll the 's
+    SET TO UPPERCASE
+    10.00 1.33
 
 UnixPrac1.sh
 
-Purpose:
-Analyzes FASTA files by counting lines, printing sequence data, counting characters, counting "ATGC" sequences, and calculating the AT/GC ratio.
-
-Usage:
-Run the script to analyze .fasta files in the data directory.
-
-Input:
-One or more .fasta files in the data directory.
-
-Output:
-
-    Number of lines.
-    All sequences from line 2 onward.
-    Total number of characters.
-    Count of "ATGC" sequences.
-    AT/GC ratio.
-
-Dependencies:
-Requires grep and bc for text processing and calculations.
-
-Example:
-
-bash
-
-bash UnixPrac1.sh
-# Output:
-# Displays line count, sequences, character count, ATGC count, and AT/GC ratio
-
+    Purpose: Analyzes FASTA files by counting lines, printing sequences, counting characters, counting "ATGC" sequences, and calculating the AT/GC ratio.
+    Usage: Run the script to perform analyses on .fasta files in the data directory.
+    Input: One or more .fasta files in the data directory.
+    Output:
+        Number of lines.
+        All sequences from line 2 onward.
+        Total number of characters.
+        Count of "ATGC" sequences.
+        AT/GC ratio.
+    Dependencies: Requires grep and bc for text processing and calculations.
+    Example: bash UnixPrac1.sh
+    Output: Displays line count, sequences, character count, ATGC count, and AT/GC ratio.
+    
     Name: Saskia Pearce
     Contact: sp621@ic.ac.uk

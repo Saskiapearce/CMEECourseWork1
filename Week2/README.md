@@ -45,7 +45,7 @@ align_seqs.py
     Input: CSV file containing two DNA sequences.
     Output: A text file with the best alignment and scores which is placed into the results folder.
     Example: python3 align_seqs.py file.csv 
-    # file.csv will be read from the data folder
+    file.csv will be read from the data folder
     dependencies: import csv
     
 
