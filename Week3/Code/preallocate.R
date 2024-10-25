@@ -19,3 +19,6 @@ PreallocFun <- function(x) {
 }
 
 system.time(PreallocFun(10))
+
+p <- ggplot(MyDF, aes(x = log(Prey.mass), y = log(Predator.mass))) +  geom_point() + facet_wrap( .~ Location, scales = "free")
+p

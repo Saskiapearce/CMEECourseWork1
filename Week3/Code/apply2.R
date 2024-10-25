@@ -7,4 +7,4 @@ SomeOperation <- function(v) { # (What does this function do?)
 }
 
 M <- matrix(rnorm(100), 10, 10)
-print (apply(M, 1, SomeOperation))
+print (apply(M, 1, SomeOperation)) # 1 means apply yhis function to each row of the matrix

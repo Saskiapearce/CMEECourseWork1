@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 """Code to align two DNA sequences"""
 #docstrings are considered part of the running code (normal comments are
 #stripped). Hence, you can access your docstrings at run time.
