@@ -1,5 +1,13 @@
-#!/usr/bin/env python3
-"""Creating a function called foo and running the function"""
+"""
+This script defines a series of functions (`foo_1` through `foo_6`) that perform various mathematical 
+operations, including square root calculation, comparison, sorting, and factorial calculation using 
+both iterative and recursive approaches. The script also demonstrates different strategies for solving 
+the same problem (factorial calculation), highlighting the key differences between **iterative** and 
+**recursive** methods.
+
+The script includes inline tests using Python's `doctest` module to verify the correctness of the functions.
+"""
+
 __appname__ = "cfexercise1"
 __author__ = 'Saskia Pearce (sp621@imperial.ac.uk)'
 __version__ = '0.0.1'
@@ -12,7 +20,8 @@ y_default = 13
 z_default = 90
 
 def foo_1(x=x_default):
-    """Calculate the square root of a given number
+    """
+    Calculate the square root of a given number.
 
     Args:
         x (float or int): The number to find the square root of. Should be non-negative. Default is 3.
@@ -30,9 +39,9 @@ def foo_1(x=x_default):
     """
     return x ** 0.5
 
-
 def foo_2(x=x_default, y=y_default):
-    """Calculates and returns the larger of two numbers.
+    """
+    Calculates and returns the larger of two numbers.
     
     Args: 
         x (float or int): The first number. Default is 3.
@@ -51,9 +60,9 @@ def foo_2(x=x_default, y=y_default):
     """
     return x if x > y else y
 
-
 def foo_3(x=x_default, y=y_default, z=z_default):
-    """Orders 3 numbers in ascending order 
+    """
+    Orders 3 numbers in ascending order.
 
     Args:
         x (int or float): The first number, default is 3.
@@ -73,9 +82,12 @@ def foo_3(x=x_default, y=y_default, z=z_default):
     nums.sort()
     return nums
 
-
 def foo_4(x=x_default):
-    """Calculates the factorial of an input value
+    """
+    Calculates the factorial of an input value using an iterative approach.
+
+    **Iterative Approach**:
+    This approach uses a `for` loop to multiply numbers from 1 to x.
 
     Args:
         x (int): The number to calculate the factorial of. Should be a non-negative integer.
@@ -95,9 +107,13 @@ def foo_4(x=x_default):
         result = result * i
     return result
 
-
 def foo_5(x=x_default):
-    """Calculates the factorial of x (recursive implementation)
+    """
+    Calculates the factorial of x using a recursive approach.
+
+    **Recursive Approach**:
+    This approach breaks the problem into smaller subproblems. It multiplies x by the result of `foo_5(x - 1)`
+    until x is reduced to 1, at which point it returns 1 (the base case). This is an example of recursion.
 
     Args:
         x (int): The number to calculate the factorial of. Should be a non-negative integer.
@@ -116,9 +132,13 @@ def foo_5(x=x_default):
         return 1
     return x * foo_5(x - 1)
 
-
 def foo_6(x=x_default):
-    """Calculates the factorial of x (iterative implementation)
+    """
+    Calculates the factorial of x using an iterative approach.
+
+    **Iterative Approach**:
+    This approach uses a `while` loop to multiply numbers from x down to 1. It continues until x is less 
+    than 1, and then returns the accumulated result.
 
     Args:
         x (int): The number to calculate the factorial of. Should be a non-negative integer.
@@ -139,10 +159,7 @@ def foo_6(x=x_default):
         x = x - 1
     return facto
 
-
 if __name__ == "__main__":  
     doctest.testmod()  # Run all the doctests in the module
-    # You can include main and exit handling if you want more functionality.
-
 
 

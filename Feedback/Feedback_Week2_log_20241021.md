@@ -13,7 +13,7 @@
 ### Workflow
 - **Results Directory**: The `Results` directory contains output files like `DNA_seq.txt` and `JustOaksData.csv`. It is a good practice to keep the directory empty by default and not track result files in version control. Consider adding a `.gitkeep` file to keep the directory structure intact.
 - **Sandbox Directory**: The `sandbox` folder is being used as a space for experimental code, which is good. Make sure that any final or important scripts are moved to the `Code` folder once tested.
-
+ 
 ## Python Code Feedback
 
 ### General Code Quality

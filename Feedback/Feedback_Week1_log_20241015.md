@@ -4,7 +4,7 @@
 ## Project Structure
 
 ### Repository Organization
-The repository is well-organized, with clear separation of code, data, results, and sandbox directories. However, there is a missing `.gitignore` file, which should be included to prevent tracking unnecessary files such as results or system-specific files (`.DS_Store`). Additionally, having a `.gitignore` would improve the repository's cleanliness.
+The repository is well-organized, with clear separation of code, data, results, and sandbox directories. However, there is a missing `.gitignore` file, which should be included to prevent tracking unnecessary files such as results or system-specific files (`.DS_Store`). Additionally, having a `.gitignore` would improve the repository's cleanliness. 
 
 ### README Files
 The `README.md` files provide useful information about the project structure and usage. However, more detailed instructions on running each script, as well as their expected input/output formats, would make the project more user-friendly. The absence of a detailed explanation of dependencies is noticeable, although it was mentioned that none are required, specifying that this applies to basic Linux distributions would add clarity.
@@ -16,7 +16,7 @@ The workflow structure, with separate folders for code, data, and results, is a 
 
 ### Shell Scripts
 1. **CountLines.sh:**
-   - The script checks for the correct number of arguments and then counts lines in a file. The use of `wc -l` for counting lines is correct, and the input validation works well. Minor improvements could be made in comments to clarify the purpose of each line of code.
+   - The script checks for the correct number of arguments and then counts lines in a file. The use of `wc -l` for counting lines is correct, and the input validation works well. Minor improvements could be made in comments to clarify the purpose of each line of code. 
 
 2. **Boilerplate.sh:**
    - This script is a simple demonstration of shell script structure and works as expected. The usage of `echo -e` for new lines is fine, but adding more comments for beginners would make it easier to understand.

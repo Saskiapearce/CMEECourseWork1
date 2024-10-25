@@ -7,11 +7,10 @@ __version__ = '3.9'
 #############################
 # FILE OUTPUT
 #############################
-# Save the elements of a list to a file
+# List to be saved to a file
 list_to_save = range(100)
 
-f = open('../sandbox/testout.txt','w')
-for i in list_to_save:
-    f.write(str(i) + '\n') ## Add a new line at the end
-
-f.close()
+# Use "with open()" for safer file handling
+with open('../sandbox/testout.txt', 'w') as f: #handles the file opening and closely safetly
+    for i in list_to_save:
+        f.write(str(i) + '\n')  # Write each item in the list followed by a new line

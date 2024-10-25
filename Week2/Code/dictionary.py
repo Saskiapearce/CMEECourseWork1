@@ -3,6 +3,8 @@ __appname__ = "Dictionary"
 __author__ = 'Saskia Pearce (sp621@imperial.ac.uk)'
 __version__ = '3.9'
 
+from collections import defaultdict
+
 taxa = { ('Myotis lucifugus','Chiroptera'),
          ('Gerbillus henleyi','Rodentia',),
          ('Peromyscus crinitus', 'Rodentia'),
@@ -17,7 +19,7 @@ taxa = { ('Myotis lucifugus','Chiroptera'),
 
 
 
-taxa_dic = {} # create an empty dictionary to add to
+taxa_dic = defaultdict(set) # create an empty dictionary to add to
 
 # Populate taxa_dic with orders mapped to sets of species
 for species, order in taxa:
