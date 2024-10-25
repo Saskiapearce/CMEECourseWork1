@@ -303,9 +303,8 @@ Vectorize1.R
     Example Run:
 
     r
-
-source("Vectorize1.R")
-# Console output shows execution times for both summing methods
+    source("Vectorize1.R")
+    # Console output shows execution times for both summing methods
 
 Author infomation: 
 	Saskia Pearce 
