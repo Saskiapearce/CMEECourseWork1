@@ -160,6 +160,13 @@ DataWrang.R
     source("DataWrang.R")
     # Console output shows wrangled data, filtered subsets, and summaries
 
+Florida.R
+    Purpose: Investigates whether Florida is getting warmer over time by analyzing Key West's annual mean temperature data. Runs a perumttaion assessment on the correlation to assess its validity and significant. 
+    Usage: Calculates Pearson correlation between year and temperature and implements a custom permutation test by shuffling temperature values 1000 times and recalculating correlations.
+    Input: 
+    Output: Prints the number of corelations which were higher than the original / observed data. 
+    Dependencies: none
+
 Girko.R
 
     Purpose: Plots the eigenvalues of a random matrix and overlays them with an ellipse to illustrate Girko’s circular law.
@@ -234,6 +241,16 @@ preallocate.R
 
     source("preallocate.R")
     # Output shows time taken by each function and memory allocation details
+
+PP_regress.R
+    Purpose: analyzes predator-prey mass relationships and visualizes these interactions using log-transformed data. It generates regression plots with facets based on feeding interaction type.
+    Usage: Input data from data file which contains data for graph generation
+    Input: EcolArchives-E089-51-D1.csv: Dataset of predator-prey interactions.
+    Output: Stacked faceted plots visualizing predator-prey mass relationships.
+    Dependencies: Requires ggplot2 for the final plot.
+
+    r
+    
 
 R_conditionals.R
 

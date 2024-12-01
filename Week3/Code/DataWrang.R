@@ -1,73 +1,68 @@
-#importing a dataframe and data wrangling it 
-# imported as a matrix (so all data is a string)
-# using matrix makes everythign a consistant data type
-MyData <- as.matrix(read.csv("../data/PoundHillData.csv", header = FALSE))
-class(MyData)
+# Clear the environment
+rm(list = ls())
 
-MyMetaData <- read.csv("../data/PoundHillMetaData.csv", header = TRUE, sep=";")
-class(MyMetaData)
+# Import necessary libraries
+require(tidyverse)
+require(reshape2)
 
-MyData[MyData == ""] = 0 # we can do this because the data is true zero (absences of species) 
+# Import the data as a matrix (ensures all data is of the same type)
+MyData <- as.matrix(read.csv("../Data/PoundHillData.csv", header = FALSE))
+class(MyData) # Check class of the data
 
-MyData <- t(MyData) #Transposition (t() function):
-#The t() function in R takes a matrix or a data frame and transposes it. Transposing means flipping the rows and columns of the data.
-head(MyData) #makes it so that months are all in one column , rather then in multiple rows 
+# Import metadata
+MyMetaData <- read.csv("../Data/PoundHillMetaData.csv", header = TRUE, sep = ";")
+class(MyMetaData) # Check class of the metadata
 
-colnames(MyData)
+# Replace empty strings with 0
+MyData[MyData == ""] <- 0
+
+# Transpose the data (flips rows and columns)
+MyData <- t(MyData)
+head(MyData)
+
+# Assign column names from the first row of MyData
+colnames(MyData) <- MyData[1,] 
+TempData <- as.data.frame(MyData[-1,], stringsAsFactors = FALSE) # Convert to data frame, excluding the first row
+head(TempData)
+
 MyData
 
-colnames(TempData) <- MyData[1,] # assign column names from original data
+# Remove row names
+rownames(TempData) <- NULL
 head(TempData)
 
-TempData <- as.data.frame(MyData[-1,],stringsAsFactors = F) #stringsAsFactors = F is important here because we don’t want R to convert columns to the factor class
-head(TempData)  
+# Reshape the data into long form
+MyWrangledData <- melt(TempData, id.vars = c("Cultivation", "Block", "Plot", "Quadrat"), 
+                       variable.name = "Species", value.name = "Count")
+head(MyWrangledData)
+tail(MyWrangledData)
 
-rownames(TempData) <- NULL #gets rid of row names which are particularly important
-head(TempData)
-
-TempData
-
-#name we can make the data long form 
-MyWrangledData <- melt(TempData, id=c("Cultivation", "Block", "Plot", "Quadrat"), variable.name = "Species", value.name = "Count")
-head(MyWrangledData); tail(MyWrangledData)
-MyWrangledData
-
-#now that the data is corrected, we can assign the correct data types 
-MyWrangledData[, "Cultivation"] <- as.factor(MyWrangledData[, "Cultivation"])
+# Correct data types
+MyWrangledData[, "Cultivation"] <- as.factor(MyWrangledData[, "Cultivation"]) 
 MyWrangledData[, "Block"] <- as.factor(MyWrangledData[, "Block"])
 MyWrangledData[, "Plot"] <- as.factor(MyWrangledData[, "Plot"])
 MyWrangledData[, "Quadrat"] <- as.factor(MyWrangledData[, "Quadrat"])
 MyWrangledData[, "Count"] <- as.integer(MyWrangledData[, "Count"])
 str(MyWrangledData)
 
-MyWrangledData
-require(tidyverse)
+# Convert to tibble for better handling
+MyWrangledData <- dplyr::as_tibble(MyWrangledData)
+glimpse(MyWrangledData)
 
-tidyverse_packages(include_self = TRUE) # the include_self = TRUE means list "tidyverse" as well 
+# Filtering data
+Count <- filter(MyWrangledData, Count > 100) # Subset rows where Count > 100
+Species <- filter(MyWrangledData, Species == "Agrostis gigantea") # Subset rows for specific species
 
+# Slicing the data
+slice(MyWrangledData, 10:15) # Select rows from 10 to 15
 
-MyWrangledData <- dplyr::as_tibble(MyWrangledData) #:: allows you to access a particular function (like a python module)
-MyWrangledData
-class(MyWrangledData)
-
-glimpse(MyWrangledData) # a nice formatted overveiw of the data 
-
-
-# filtering the data
-Count <_ filter(MyWrangledData, Count>100) #like subset(), but nicer!
-Species <- filter(MyWrangledData, Species == "Agrostis gigantea") #subsets for these speices 
-
-# slicing the data
-slice(MyWrangledData, 10:15) # Look at a particular range of data rows
-
-# pipe operator , which allows you to create a compact sequence of manioutates in yoru data set , needed dplyr
-
+# Summarise using the pipe operator
 MyWrangledData %>%
   group_by(Species) %>%
-  summarise(avg = mean(Count)) #average of each species (this is a really cool function i love this)
+  summarise(avg = mean(Count, na.rm = TRUE)) # Calculate average count per species, ignoring NA values
 
-aggregate(MyWrangledData$Count, list(MyWrangledData$Species), FUN=mean)
-
+# Alternative using aggregate
+aggregate(MyWrangledData$Count, by = list(MyWrangledData$Species), FUN = mean)
 
 
 

@@ -1,6 +1,8 @@
 #Plotting girkos
-library(tidyverse)
-library(ggplot2)
+install.packages("tidyverse")
+install.packages("ggplot2")
+require("ggplot2")
+require("tidyverse")
 
 
 build_ellipse <- function(hradius, vradius){ # function that returns an ellipse

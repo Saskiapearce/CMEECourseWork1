@@ -1,19 +1,10 @@
-source("basic_io.R")
-
-getwd()
-
-Mydata <- read.csv("../data/trees.csv")
+rm(list=ls())
+Mydata <- read.csv("../Data/trees.csv")
 ls(pattern = "my*")
 
-class(Mydata)
-head(Mydata)
-str(MyData)
+MyData <- read.csv("../Data/trees.csv", header = F)
 
-MyData <- read.csv("../data/trees.csv", header = F)
-head(MyData)
-
-MyData <- read.table("../data/trees.csv", sep = ',', header = TRUE)
-head(MyData)
+MyData <- read.table("../Data/trees.csv", sep = ',', header = TRUE)
 
 write.csv(MyData, "../Results/MyData.csv")
 

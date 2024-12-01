@@ -1,0 +1,61 @@
+\documentclass[12pt]{article} % Use 10pt, 9pt, or \documentclass[8pt]{article} % Use 10pt, 9pt, or 8pt for smaller text
+\usepackage[utf8]{inputenc}
+\usepackage{geometry}
+\geometry{
+  a4paper,
+  total={170mm,257mm},
+  left=10mm,
+  right=10mm,
+  top=5mm, % Adjusted top margin
+}
+\usepackage{graphicx}
+\usepackage{titling}
+
+% Title customization
+\setlength{\droptitle}{-50pt} % Reduce space above the title
+\title{Feeling the Burn: Is Florida Getting Warmer?}
+
+\usepackage{fancyhdr}
+\fancypagestyle{plain}{% Default header/footer clearing
+    \fancyhf{} % clear all header and footer fields
+}
+\makeatletter
+\def\@maketitle{%
+  \newpage
+  \null
+  \vskip 0.5em % Reduced space between the top and title
+  \begin{center}%
+    \let \footnote \thanks
+    {\LARGE \@title \par}%
+    \vskip 0.5em % Reduced space below the title
+  \end{center}%
+  \par
+  \vskip 0.5em}
+\makeatother
+
+\usepackage{lipsum}
+\usepackage{cmbright}
+
+\begin{document}
+
+\maketitle
+
+\section*{Results} 
+
+I accessed data on Key West Annual Mean Temperature from the TMQB GitHub on the 3rd November 2024. The data had 100 observations spanning from the year 1901-2000. The mean temperature was 25.31 degrees (SD 0.5, range 23.75-26.35). I found a positive, statistically significant correlation between year and temperature (Figure 1). This result was confirmed with the application of a non-parametric permutation test which validated the observed temperature trend.  
+
+\textbf{Pearson Correlation}\\
+A correlation was found between temperature and year ($t = 6.2$, $df = 98$, $p$-value $= 1.123 \times 10^{-8}$). The correlation coefficient was 0.5331. 
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.5\textwidth]{Rplot.pdf}
+    \caption{The correlation between temperature and the years 1900-2000. }
+    \label{fig:sample_image}
+\end{figure}
+
+\textbf{Permutation Analysis}\\
+I performed 1000 permutations shuffling temperature data. No random correlation permutations had a higher correlation coefficient than 0.5331. I calculated the $p$-value by dividing the number of results higher than the observed correlation. The p-value was 0. The mean correlation coefficient of the null distribution was close to 0 (mean = -0.008, SD = 0.10), indicating no correlation when temperature data were randomized. Therefore, the likelihood of obtaining a correlation of 0.5331 or higher by chance alone is extremely low. This suggests that the correlation between temperature and year is likely not a result of a random pattern.
+
+\end{document}
+
