@@ -76,8 +76,8 @@ print(system.time(lapply_sample(popn, n, num)))
 ## Performance Summary:
 # `loopy_sample1` (no preallocation): Very slow due to dynamic memory allocation.
 #`loopy_sample2` (vector preallocation): Faster because memory is preallocated
-#  `loopy_sample3` (list preallocation): Similar to vector preallocation but slightly less efficient
-# `lapply_sample`: Faster than loops because it uses vectorized operations and avoids explicit iteration
+#  `loopy_sample3` (list preallocation): Similar to vector preallocation but not as  efficient
+# `lapply_sample`: Faster than loops because it uses vectorized operations and avoids iteration over and over
 #  `sapply_sample`: Slightly faster than `lapply` because it simplifies the result automatically.
 
 ## Recommendation:

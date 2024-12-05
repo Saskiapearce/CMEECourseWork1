@@ -5,13 +5,13 @@ rm(list = ls())
 is.even <- function(n = 2) {
   # Ensure the input is numeric
   if (is.na(n)) {
-    return("Input is NA. Please provide a valid numeric value.")
+    return("Input is NA. Please provide a valid numeric value.") #  if no value is given 
   }
   if (!is.numeric(n)) {
-    return("Input is not numeric. Please provide a numeric value.")
+    return("Input is not numeric. Please provide a numeric value.") # if input value is not numeric 
   }
   if (n %% 1 != 0) {
-    return(paste(n, "is not an integer."))
+    return(paste(n, "is not an integer.")) # if n is not an integer #value which is devided by 1
   }
   
   # Check if the number is even
@@ -56,10 +56,10 @@ is.prime <- function(n) {
     return("Input is NA. Please provide a valid numeric value.")
   }
   if (!is.numeric(n)) {
-    return("Input is not numeric. Please provide a numeric value.")
+    return("Input is not numeric. provide a numeric value.")
   }
   if (n %% 1 != 0 || n < 0) {
-    return(paste(n, "is not a non-negative integer."))
+    return(paste(n, "is not a non-negative/ non decimal integer."))
   }
   
   # Special cases
@@ -70,19 +70,20 @@ is.prime <- function(n) {
   }
   
   # Check divisibility
-  ints <- 2:floor(sqrt(n)) # Optimize by checking up to the square root of n
-  if (all(n %% ints != 0)) {
+  ints <- 2:(n-1) # Optimize by checking up to the square root of n
+  if (all(n%%ints!=0)) {
     return(paste(n, "is a prime!"))
   } else {
-    return(paste(n, "is a composite!"))
+    return(paste(n, "is not a prime!"))
   }
 }
 
-# Test case for is.prime function
-is.prime(3) # Expected: "3 is a prime!"
 
-# Additional test cases to validate edge case handling
+
+# Testing functions ! :) 
+is.prime(3) # Expected: "3 is a prime!"
 is.even(NA)         # Expected: "Input is NA. Please provide a valid numeric value."
 is.power2(-4)       # Expected: "-4 is not a positive number."
 is.prime(0.5)       # Expected: "0.5 is not a non-negative integer."
 is.prime("hello")   # Expected: "Input is not numeric. Please provide a numeric value."
+

@@ -36,7 +36,7 @@ The repository contains primary scripts located in the Code folder. The Data fol
 
 GIS Practical 1.R
 
-    Purpose: This script provides a comprehensive framework for Geographic Information System 	     (GIS) analysis, including vector and raster data processing, visualization, and spatial analysis. The workflow integrates multiple R packages to manipulate spatial data, create custom geometries, project coordinates, and perform rasterization. Additionally, it incorporates climate data visualization and topographical mapping.
+    Purpose: This script provides a comprehensive framework for Geographic Information System (GIS) analysis, including vector and raster data processing, visualization, and spatial analysis. The workflow integrates multiple R packages to manipulate spatial data, create custom geometries, project coordinates, and perform rasterization. Additionally, it incorporates climate data visualization and topographical mapping.
     Usage: Run the script directly in R.
     Input: Shapefiles in ../Data/uk/ for saving/loading UK and Ireland vector geometries.
     Climate data (WHOSIS_000001.csv) and raster datasets (etopo_25.tif) in ../Data/.

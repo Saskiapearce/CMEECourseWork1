@@ -1,6 +1,6 @@
 rm(list=ls())
 
-d<-read.table("../data/SparrowSize.txt", header=TRUE)
+d<-read.table("../Data/SparrowSize.txt", header=TRUE)
 str(d)
 
 # prints length of the tarsus, histogram of tardud and mena of the tarsus 

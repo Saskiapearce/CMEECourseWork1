@@ -1,9 +1,11 @@
 rm(list=ls())
-require(ggplot2)
-## Loading required package: ggplot2
-require(MASS)
-## Loading required package: MASS
-require(ggpubr)
+if (!requireNamespace("ggplot2", quietly = TRUE)) install.packages("ggplot2")
+library(ggplot2)
+if (!requireNamespace("MASS", quietly = TRUE)) install.packages("MASS")
+library(MASS)
+if (!requireNamespace("ggpubr", quietly = TRUE)) install.packages("ggpubr")
+library(ggpubr)
+
 ## Loading required package: ggpubr
 #runs a fish model and plots the residual 
 

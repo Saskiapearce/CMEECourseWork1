@@ -4,6 +4,8 @@ data <- read.csv("../Data/EcolArchives-E089-51-D1.csv")
 data$Type.of.feeding.interaction <- as.character(data$Type.of.feeding.interaction)
 #instal packages
 #install.packages("ggplot2")
+if (!requireNamespace("ggplot2", quietly = TRUE)) install.packages("ggplot2")
+if (!requireNamespace("plyr", quietly = TRUE)) install.packages("plyr")
 library(plyr)
 library(ggplot2)
 
@@ -56,5 +58,5 @@ head(regression_results)
 
 regression_results
 # Write results to CSV
-write.csv(regression_results, "../results/PPP_Regress_Results.csv", row.names = FALSE)
+write.csv(regression_results, "../Results/PP_Regress_Results.csv", row.names = FALSE)
 

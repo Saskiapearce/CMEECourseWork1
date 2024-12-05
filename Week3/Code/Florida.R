@@ -3,9 +3,6 @@ rm(list=ls())
 load("../Data/KeyWestAnnualMeanTemperature(3).RData")
 
 cor_test <- cor.test(ats$Year, ats$Temp)
-cor_test
-print(cor_test$estimate)
-
 
 # create a loop with samples (shuffles the tempature function 50 times? then stores the correlation value)
 # make a new dataframe to perform a co.test on everytime... with a funtion eg sample data 
@@ -17,8 +14,8 @@ shuffle_temp_correlation_test <- function(temp, n) { # etablish a function which
   for (i in 1:n) { #iterate n times 
     shuffled_temp <- sample(ats$Temp) #create shuffled data of temp 
     newlist[[i]] <- data.frame(Year = year_column, shuffled_temp = shuffled_temp)
-    cor_result <- cor.test(year_column, shuffled_temp)
-    pval[i] <- cor_result$estimate
+    cor_result <- cor.test(year_column, shuffled_temp) # get the correlation results
+    pval[i] <- cor_result$estimate # get the estaimates 
   }
  # print resulting data frame, including year and shuffled temp data (shuffled 50 times)
   return(list(estimate = pval))

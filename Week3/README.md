@@ -165,7 +165,7 @@ Florida.R
     Usage: Calculates Pearson correlation between year and temperature and implements a custom permutation test by shuffling temperature values 1000 times and recalculating correlations.
     Input: 
     Output: Prints the number of corelations which were higher than the original / observed data. 
-    Dependencies: none
+    Dependencies: none, included is pdf of write up and latex file. 
 
 Girko.R
 
@@ -180,6 +180,23 @@ Girko.R
 
     source("Girko.R")
     # Displays a plot with eigenvalues and an elliptical boundary
+    
+GPDD_Data.R 
+
+    Purpose: Visualize GPDD data locations on a world map, with the aim of identifying geographic distribution and potential western biases.
+    Usage: Run the script in R to generate a world map with data locations
+    Input: GPDD dataset: ../Data/GPDDFiltered(1).RData (with long and lat columns) 
+    Output: ../Results/GPDD_Map.png showing GPDD data locations.
+    Dependencies:
+    maps 
+    Example Run:
+
+    r
+
+  source("GPDD_Data.R")
+  # map output 
+
+
 
 MyBars.R
 
@@ -243,14 +260,29 @@ preallocate.R
     # Output shows time taken by each function and memory allocation details
 
 PP_regress.R
-    Purpose: analyzes predator-prey mass relationships and visualizes these interactions using log-transformed data. It generates regression plots with facets based on feeding interaction type.
-    Usage: Input data from data file which contains data for graph generation
+    Purpose: analysis of predator-prey mass relationships from dataset, generating visualisations and regression statistics for various feeding interactions and predator life stages. Prints slope, intercept, R², p-value, F-statistic for each regression undertaken.   
+    Usage: Input data from EcolArchives-E089-51-D1.csv which contains data for each regression
     Input: EcolArchives-E089-51-D1.csv: Dataset of predator-prey interactions.
-    Output: Stacked faceted plots visualizing predator-prey mass relationships.
-    Dependencies: Requires ggplot2 for the final plot.
+    Output: Stacked faceted plots visualising predator-prey mass relationships.
+    returns key statistics such as slope, intercept, R², p-value, F-statistic
+    Dependencies: 
+    ggplot2
+    plyr
 
     r
-    
+   
+PP_Regress_loc.R
+    Purpose: analyses predator-prey mass relationships and visualizes these interactions based on feeding interaction type, predator life stage and location where data was collected. 
+    Usage:  input EcolArchives-E089-51-D1.csv
+    Input: EcolArchives-E089-51-D1.csv: Dataset of predator-prey interactions, as well location data.
+    Output: key statistics such as slope, intercept, R², p-value, F-statistic, based off feeding interaction type, predator life stage and location iterations. 
+    Dependencies: none
+
+
+    r
+
+    source("PP_Regress_loc.R")
+
 
 R_conditionals.R
 
