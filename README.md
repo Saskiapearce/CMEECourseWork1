@@ -62,7 +62,8 @@ Purpose: This folder is a continuation of R scripting, focusing on data manageme
     
  Week 5: GIS Programming 
  
- Purpose: This folder is a continuation of R scripting, focusing on geographical data anaylesis using Geographic Information System (GIS) analysis, including vector and raster data processing, visualization, and spatial analysis. The workflow integrates multiple R packages to manipulate spatial data, create custom geometries, project coordinates, and perform rasterization. Additionally, it incorporates climate data visualization and topographical mapping. 
+Purpose: This folder is a continuation of R scripting, focusing on geographical data anaylesis using Geographic Information System (GIS) analysis, including vector and raster data processing, visualization, and spatial analysis. The workflow integrates multiple R packages to manipulate spatial data, create custom geometries, project coordinates, and perform rasterization. Additionally, it incorporates climate data visualization and topographical mapping. 
+ 
     Code: Contains R scripts (.R files) demonstrating:
         Custom polygons and points for UK and Ireland regions
         Raster maps for temperature, elevation, and aggregated/disaggregated values.
