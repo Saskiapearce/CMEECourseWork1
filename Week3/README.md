@@ -3,10 +3,10 @@ CMEECourseWork
 Title: Week 3 Biological Computing Bootcamp
 
 Brief Description:
-
 This repository contains coursework for the Computational Methods in Ecology and Evolution (CMEE), specifically focusing on biological computing tasks using Linux and shell scripting. The exercises are based on TheMulQuaBio course notes (https://mhasoba.github.io/TheMulQuaBio/intro.html) from the Biological Computing course at the Department of Life Sciences, Imperial College London.
 
-Project Structure and Usage: The repository contains code scripts located in the Code folder. The Data folder includes input files used by some scripts, while the sandbox folder contains experimental files and is not essential to the main coursework. Output files are generated in the results folder for this week’s coursework.
+Project Structure and Usage: 
+The repository contains code scripts located in the Code folder. The Data folder includes input files used by some scripts, while the sandbox folder contains experimental files and is not essential to the main coursework. Output files are generated in the results folder for this week’s coursework.
 
 Project Structure
 
@@ -24,8 +24,7 @@ plyr (Practical)
 ddply (Practical) 
 tidyverse
 
-Installation:
-
+Installation: 
 To clone this repository, use the following command:
 bash
 git clone git@github.com:Saskiapearce/CMEECourseWork.git
@@ -145,6 +144,7 @@ DataWrang.R
     # Console output shows wrangled data, filtered subsets, and summaries
 
 Florida.R
+
     Purpose: Investigates whether Florida is getting warmer over time by analyzing Key West's annual mean temperature data. Runs a perumttaion assessment on the correlation to assess its validity and significant. 
     Usage: Calculates Pearson correlation between year and temperature and implements a custom permutation test by shuffling temperature values 1000 times and recalculating correlations.
     Input: 
@@ -178,7 +178,6 @@ GPDD_Data.R
     
      source("GPDD_Data.R")
      # map output 
-
 
 
 MyBars.R
@@ -235,6 +234,7 @@ preallocate.R
     # Output shows time taken by each function and memory allocation details
 
 PP_regress.R
+
     Purpose: analysis of predator-prey mass relationships from dataset, generating visualisations and regression statistics for various feeding interactions and predator life stages. Prints slope, intercept, R², p-value, F-statistic for each regression undertaken.   
     Usage: Input data from EcolArchives-E089-51-D1.csv which contains data for each regression
     Input: EcolArchives-E089-51-D1.csv: Dataset of predator-prey interactions.
@@ -245,6 +245,7 @@ PP_regress.R
     plyr
 
 PP_Regress_loc.R
+
     Purpose: analyses predator-prey mass relationships and visualizes these interactions based on feeding interaction type, predator life stage and location where data was collected. 
     Usage:  input EcolArchives-E089-51-D1.csv
     Input: EcolArchives-E089-51-D1.csv: Dataset of predator-prey interactions, as well location data.
@@ -282,6 +283,21 @@ sample.R
 
     source("sample.R")
     # Outputs execution times and displays histogram of population
+    
+TAutoCorr.R
+
+    Purpose: Calculates if temperatures of one year are significantly correlated with the next year.
+    Usage: Run the script, whilst with a realtive path to the Key West's annual mean data.
+    Input: ../data/KeyWestAnnualMeanTemperature(3).RData
+    Output:
+        Prints a corraltaion coefficent between successive years and stores it.
+        Prints the fraction of correaltion coefficent from the previous step that are greater than 1 (p-value) 
+    Example Run: 
+
+
+    source("TAutoCorr.R")
+    # Also a latex document which goes with it
+
 
 TreeHeight.R
 
