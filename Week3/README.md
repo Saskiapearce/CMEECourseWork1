@@ -44,8 +44,6 @@ apply1.R
         Prints the mean of each column.
     Example Run:
 
-    r
-
     source("apply1.R")
     # Output will show RowMeans, RowVars, and ColMeans
 
@@ -56,8 +54,6 @@ apply2.R
     Input: No external input. A 10x10 matrix is generated within the script.
     Output: Prints the matrix after applying SomeOperation to each row.
     Example Run:
-
-    r
 
     source("apply2.R")
     # Output will show the transformed matrix
@@ -74,8 +70,6 @@ basic_io.R
     Dependencies: Requires trees.csv in the ../data/ directory.
     Example Run:
 
-    r
-
     source("basic_io.R")
     # Console output displays information on Mydata, and MyData.csv is saved in ../Results
 
@@ -86,8 +80,6 @@ boilerplate.R
     Input: No external input. Sample arguments are provided within the script.
     Output: Prints the type of each argument passed to MyFunction.
     Example Run:
-
-    r
 
     source("boilerplate.R")
     # Output:
@@ -103,8 +95,6 @@ break.R
     Input: No external input.
     Output: Prints the values of i from 0 to 9, with a message indicating each value.
     Example Run:
-
-    r
 
     source("break.R")
     # Output:
@@ -124,8 +114,6 @@ browse.R
     Output: A line plot showing exponential growth over the specified generations.
     Example Run:
 
-    r
-
     source("browse.R")
     # An interactive debug session will open at each generation
 
@@ -136,8 +124,6 @@ control_flow.R
     Input: No external input; the script generates its own data.
     Output: Prints results of various conditional checks and loops to the console.
     Example Run:
-
-    r
 
     source("control_flow.R")
     # Console output shows results of if statements, for loops, and while loops
@@ -155,8 +141,6 @@ DataWrang.R
     Dependencies: Requires tidyverse for data manipulation.
     Example Run:
 
-    r
-
     source("DataWrang.R")
     # Console output shows wrangled data, filtered subsets, and summaries
 
@@ -164,8 +148,11 @@ Florida.R
     Purpose: Investigates whether Florida is getting warmer over time by analyzing Key West's annual mean temperature data. Runs a perumttaion assessment on the correlation to assess its validity and significant. 
     Usage: Calculates Pearson correlation between year and temperature and implements a custom permutation test by shuffling temperature values 1000 times and recalculating correlations.
     Input: 
-    Output: Prints the number of corelations which were higher than the original / observed data. 
-    Dependencies: none, included is pdf of write up and latex file. 
+    Output: Prints the number of correlations which were higher than the original / observed data. 
+    Dependencies: none, included is pdf of write up and latex file.
+    
+    source("Girko.R")
+    # Prints the number of correlations which were higher than the original / observed data
 
 Girko.R
 
@@ -175,8 +162,6 @@ Girko.R
     Output: A plot showing the eigenvalues of the random matrix and an ellipse representing the theoretical boundary.
     Dependencies: Requires tidyverse and ggplot2 for plotting.
     Example Run:
-
-    r
 
     source("Girko.R")
     # Displays a plot with eigenvalues and an elliptical boundary
@@ -190,11 +175,9 @@ GPDD_Data.R
     Dependencies:
     maps 
     Example Run:
-
-    r
-
-  source("GPDD_Data.R")
-  # map output 
+    
+     source("GPDD_Data.R")
+     # map output 
 
 
 
@@ -208,8 +191,6 @@ MyBars.R
     Dependencies: Requires tidyverse and ggplot2 for plotting.
     Example Run:
 
-    r
-
     source("MyBars.R")
     # Displays a customized bar plot with line ranges and labels
 
@@ -220,9 +201,7 @@ next.R
     Input: No external input required.
     Output: Prints only odd numbers between 1 and 10.
     Example Run:
-
-    r
-
+    
     source("next.R")
     # Output:
     # [1] 1
@@ -240,8 +219,6 @@ plotLin.R
     Dependencies: Requires ggplot2 for plotting.
     Example Run:
 
-    r
-
     source("plotLin.R")
     # Outputs a ggplot with a linear regression line and color gradient
 
@@ -253,8 +230,6 @@ preallocate.R
     Output: Prints time taken for each function and displays vector contents and memory usage per iteration.
     Dependencies: Requires ggplot2 for the final plot.
     Example Run:
-
-    r
 
     source("preallocate.R")
     # Output shows time taken by each function and memory allocation details
@@ -269,8 +244,6 @@ PP_regress.R
     ggplot2
     plyr
 
-    r
-   
 PP_Regress_loc.R
     Purpose: analyses predator-prey mass relationships and visualizes these interactions based on feeding interaction type, predator life stage and location where data was collected. 
     Usage:  input EcolArchives-E089-51-D1.csv
@@ -278,8 +251,6 @@ PP_Regress_loc.R
     Output: key statistics such as slope, intercept, R², p-value, F-statistic, based off feeding interaction type, predator life stage and location iterations. 
     Dependencies: none
 
-
-    r
 
     source("PP_Regress_loc.R")
 
@@ -292,7 +263,6 @@ R_conditionals.R
     Output: Prints results indicating if numbers are even, powers of 2, or prime.
     Example Run:
 
-    r
 
     source("R_conditionals.R")
     is.even(6)        # Output: "6 is even!"
@@ -309,7 +279,6 @@ sample.R
         Execution times for each sampling method.
     Example Run:
 
-    r
 
     source("sample.R")
     # Outputs execution times and displays histogram of population
@@ -325,7 +294,6 @@ TreeHeight.R
         Saves results to ../results/TreedataR.csv.
     Example Run:
 
-    r
 
     source("TreeHeight.R")
     # Console outputs calculated heights and saves them in TreedataR.csv
@@ -338,7 +306,6 @@ try.R
     Output: Prints the mean of the sample if calculated, or an error message.
     Example Run:
 
-    r
 
     source("try.R")
     # Console output shows mean values or error messages based on sample uniqueness
@@ -351,7 +318,6 @@ Vectorize1.R
     Output: Prints time taken for both summing methods.
     Example Run:
 
-    r
     source("Vectorize1.R")
     # Console output shows execution times for both summing methods
 

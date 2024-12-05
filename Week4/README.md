@@ -47,8 +47,6 @@ SWS01.R
         creates vectors called myNumericVector, myCharacterVector and myLogicalVector
     Example Run:
 
-    r
-
     source("SWS01.R")
     # Output will show results of the calculations, num [1:8] 1.3 2.5 1.9 3.4 5.6 1.4 3.1 2.9, chr [1:8] "low" "low" "low" "low" "high" "high" "high" ... and logi [1:8] TRUE TRUE FALSE FALSE TRUE TRUE ...
 
@@ -64,8 +62,6 @@ GLM02.R
     ggplot2
     ggpubr
     Example Run:
-
-    r
 
     source("GLM02.R")
     # Output will show summary table of glm, range of cell size data and a visualisation of the effect of cell size on the proability of parasites. 
@@ -87,8 +83,6 @@ Statistical test result (t.test output).
   Dependencies: non
 
     Example Run:
-
-    r
 
     source("SWS02.R")
     #  Histograms, Density plot with reference lines and boxplot of Tarsus by sex.
@@ -124,8 +118,6 @@ GLMS.R
 
     Example Run:
 
-    r
-
     source("GLMS.R")
     #  Scatterplot Total Abundance, Statistical test result (glm output) and summary of data.
     
@@ -146,8 +138,6 @@ SWS04.R
     Dependencies: none
 
     Example Run:
-
-    r
 
     source("SWS04.R")
     #  Scatterplot Matrix    
