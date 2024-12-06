@@ -1,8 +1,10 @@
 # Binomial and binary models 
-require(ggplot2)
-require(ggpubr)
+if (!requireNamespace("ggplot2", quietly = TRUE)) install.packages("ggplot2")
+if (!requireNamespace("plyr", quietly = TRUE)) install.packages("plyr")
+library(plyr)
+library(ggplot2)
 
-worker <- read.csv("../data/workerbees.csv", stringsAsFactors = T)
+worker <- read.csv("../Data/workerbees.csv", stringsAsFactors = T)
 worker
 
 M1 <- glm(Parasites~CellSize, data = worker, family = "binomial") #non-normal
