@@ -102,26 +102,14 @@ cfexercise1.py
     Output: Returns mathematical results (square roots, larger numbers, factorials, etc.).
     Example: 
     python3 cfexercise1.py
-    Functions made:    
-     foo_1:
-        Calculates the square root of a number.
-
-    foo_2:
-        Compares two numbers and returns the larger.
-
-    foo_3:
-        Sorts three numbers in ascending order and returns them in a list.
-
-    foo_4:
-        Calculates the factorial of a number using an iterative approach (with a for 	loop).
-
-    foo_5:
-        Calculates the factorial using a recursive approach, breaking the problem 		into smaller subproblems until reaching the base case.
-
-    foo_6:
-        Calculates the factorial with an alternative iterative approach (using a while 	loop).
-	Dependencies: import sys
-	import doctest
+    Functions made:
+    foo_1: Calculates the square root of a number
+    foo_2: Compares two numbers and returns the larger number
+    foo_3: Sorts three numbers in ascending order and returns them in a list.
+    foo_4: Calculates the factorial of a number using an iterative approach (with a for loop).
+    foo_5: Calculates the factorial using a recursive approach, breaking the problem into smaller subproblems until reaching the base case.
+    foo_6: Calculates the factorial with an alternative iterative approach (using a while loop).
+    Dependencies:  sys, doctest
 	
 cfexercise2.py
 
@@ -146,8 +134,8 @@ debugme.py
     Output: Prints debugging information to identify the division by zero error.
     Dependency: `ipdb` 
     Example: >>> buggyfunc(3)
-	Traceback (most recent call last):
-	ZeroDivisionError: division by zero
+    Traceback (most recent call last):
+    ZeroDivisionError: division by zero
 
 dictionary.py
 
@@ -166,7 +154,7 @@ lc1.py
     Mean body mass (in grams)
     Input: Tuple of bird data (Latin name, common name, body mass).
     Output: Three separate lists for Latin names, common names, and body masses.
-        Example: python3 lc1.py
+    Example: python3 lc1.py
 
 lc2.py
 
@@ -180,60 +168,14 @@ loops.py
 
     Purpose: Demonstrates basic for and while loops in Python.
     Usage: The script contains four main examples:
-For Loop Examples
-
+    For Loop Examples
     Range-based Iteration
     Iterates over a range of integers from 0 to 4, printing each integer in the range.
-
+    Example Output: 0, 1, 2, 3, 4
+    List Iteration with Mixed Data Types
+    Iterates over a list (my_list) containing mixed data types, printing each item.
     Example Output:
-
-0
-1
-2
-3
-4
-
-List Iteration with Mixed Data Types
-Iterates over a list (my_list) containing mixed data types, printing each item.
-
-Example Output:
-
-graphql
-
-0
-2
-geronimo!
-3.0
-True
-False
-
-Accumulating a Sum
-Calculates the cumulative sum of a list of numbers (summands), printing the updated total after each addition.
-
-Example Output:
-
-yaml
-
-0
-1
-12
-123
-1234
-
-While Loop Example
-
-    Incrementing a Counter Until a Condition is Met
-    Uses a while loop to increment a counter z from 0 until it reaches 100, printing the value of z at each step.
-
-    Example Output:
-
-    python
-
-...
-98
-99
-100
-
+    various loop function outcomes as described in doc strings...
     Input: None (predefined lists and variables).
     Output: Prints loop iterations and cumulative sums.
     Example: python3 loops.py
@@ -242,16 +184,13 @@ MyExampleScript.py
 
     Purpose: Demonstrates a function (foo) that squares a number.
     Usage: Here are examples of how the function can be used:
-
-python
-
->>> foo(2)
-4
->>> foo(5)
-25
->>> foo(3.5)
-12.25
-
+    python
+    >>> foo(2)
+    4
+    >>> foo(5)
+    25
+    >>> foo(3.5)
+    12.25
     Input: A single integer.
     Output: Prints the square of the input.
     Example: python MyExampleScript.py
@@ -267,11 +206,12 @@ oaks.py
     Example: python Oaks 
     
 Oaks_debugme.py
+
     Purpose: reads a CSV file of species data (TestOaksData.csv)
     Usage: >>> is_an_oak('Quercus robur')
-True
->>> is_an_oak('Fraxinus excelsior')
-False
+    True
+    >>> is_an_oak('Fraxinus excelsior')
+    False
     Input: A CSV file containing species names (TestOaksData.csv).
     Output: A CSV file (JustOaksData.csv) containing only oak species.
     Dependencies: 
@@ -280,26 +220,21 @@ False
     import doctest
     Example:
     python oaks_debugme.py
-    
-   ensure that TestOaksData.csv is in the Data file
+    ensure that TestOaksData.csv is in the Data file
 
 
 scope.py
 
     Purpose: Demonstrates local and global variable scopes.
     Usage: 
-is_an_oak(name)
-
-A helper function to demonstrate string manipulation and is used as an example in the script.
-a_function(y)
-
-Illustrates how a local variable within a function behaves differently from a global variable, highlighting local scope behavior.
-modify_list_1(some_list)
-
-Shows how reassigning a list inside a function does not modify the original list outside the function.
-modify_list_3(some_list)
-
-Demonstrates modifying a list in-place by appending an element, which changes the list outside the function due to Python’s handling of mutable objects.
+    is_an_oak(name)
+    A helper function to demonstrate string manipulation and is used as an example in the script.
+    a_function(y)
+    Illustrates how a local variable within a function behaves differently from a global variable, highlighting local scope behavior.
+    modify_list_1(some_list)
+    Shows how reassigning a list inside a function does not modify the original list outside the function.
+    modify_list_3(some_list)
+    Demonstrates modifying a list in-place by appending an element, which changes the list outside the function due to Python’s handling of mutable objects.
     Input: None (predefined global variables).
     Output: Displays the values of variables inside and outside functions.
     Example: python3 scope.py

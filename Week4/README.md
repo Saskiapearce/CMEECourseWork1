@@ -92,6 +92,7 @@ Statistical test result (t.test output).
     Statistical test result (t.test output).
 
 GLMS.R
+
  Purpose: takes the results of the dataframe fisheries.csv and prints scatterplots of the data, performs a GLM of total abundance versus mean depth. 
     Usage: Run the script directly in R, have thefisheries.csv in the data file 
     Input:  fisheries.csv
@@ -124,6 +125,7 @@ GLMS.R
     
  
 SWS04.R
+
     Purpose:  performs a preliminary variance-covariance analysis for bivariate models using sparrow        morphological data. It focuses on exploring relationships between traits such as tarsus length, wing length, and sex through visualizations and subsetting.
     Usage: Run the script directly in R, have SparrowSize.txt in the data file 
     Input: SparrowSize.txt
