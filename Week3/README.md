@@ -296,7 +296,7 @@ TAutoCorr.R
 
 
     source("TAutoCorr.R")
-    # Also a latex document which goes with it
+    # Also a latex document pdf, autocorrelationgroupwork.pdf and latex file, main.tex, which anslysies the results of the autocorrealtion analsys. 
 
 
 TreeHeight.R
