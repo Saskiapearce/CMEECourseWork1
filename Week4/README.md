@@ -78,9 +78,8 @@ SWS02.R
     Boxplot of Tarsus by sex.
     Numerical summaries:
     Mean, variance, range, and head of the Tarsus column.
-
-Statistical test result (t.test output).  
-  Dependencies: non
+    Statistical test result (t.test output).  
+    Dependencies: none
 
     Example Run:
 
