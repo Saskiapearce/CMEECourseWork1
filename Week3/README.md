@@ -244,7 +244,7 @@ PP_regress.R
     ggplot2
     plyr
 
-PP_Regress_loc.R
+PP_Regress_Loc.R
 
     Purpose: analyses predator-prey mass relationships and visualizes these interactions based on feeding interaction type, predator life stage and location where data was collected. 
     Usage:  input EcolArchives-E089-51-D1.csv
