@@ -1,53 +1,53 @@
+
+#setwd("~/Documents/CMEECoursework/WeekFinal/code")
+
+library(dplyr)
+library(ggplot2)
+
 rm(list=ls())
 
-data <- read.csv("../Data/EcolArchives-E089-51-D1.csv")
-data$Type.of.feeding.interaction <- as.character(data$Type.of.feeding.interaction)
-data$Predator.lifestage <- as.character(data$Predator.lifestage)
-data$Location <- as.character(data$Location)
-#instal packages
-#install.packages("ggplot2")
-if (!requireNamespace("ggplot2", quietly = TRUE)) install.packages("ggplot2")
-if (!requireNamespace("plyr", quietly = TRUE)) install.packages("plyr")
-library(ggplot2)
-library(plyr)
+#Create dataframe
+MyDF <- read.csv("../data/EcolArchives-E089-51-D1.csv")
+#dim(MyDF) 
+#unique(MyDF$Prey.mass.unit)
 
-# qplot(log(Prey.mass), log(Predator.mass), data = data, colour = Type.of.feeding.interaction)
+#make new prey mass(g) column, where mg is / 1000
+MyDF <- MyDF %>%
+  mutate(
+    Prey.mass.g = ifelse(Prey.mass.unit == "mg", Prey.mass / 1000, Prey.mass)
+  )
 
-# Define regression function with additional checks
-Regression <- function(subset_data) {
-  if (nrow(subset_data) > 1 && length(unique(subset_data$Prey.mass)) > 1 && length(unique(subset_data$Predator.mass)) > 1) {
-    # Perform linear regression
-    model <- lm(Predator.mass ~ Prey.mass, data = subset_data)
-    model_summary <- summary(model)
-    
-    # Return regression statistics as a data frame
-    return(data.frame(
-      Slope = model_summary$coefficients[2, 1],
-      Intercept = model_summary$coefficients[1, 1],
-      R_Squared = model_summary$r.squared,
-      P_Value = model_summary$coefficients[2, 4],
-      F_Statistic = model_summary$fstatistic[1],
-      Predictor = paste(
-        unique(subset_data$Type.of.feeding.interaction),
-        unique(subset_data$Predator.lifestage),
-        unique(subset_data$Location), 
-        sep = (" - ") 
-      )
-    ))
-  } else {
-    return(NULL) # Skip subsets with insufficient or constant data
-  }
-}
 
-# Apply Regression function to each group using ddply
-regression_results_loc <- ddply(data, .(Type.of.feeding.interaction, Predator.lifestage, Location), Regression)
+#Clean up rows with NAs
+Clean_data <- MyDF %>%
+  group_by(Location, Predator.lifestage, Type.of.feeding.interaction) %>%
+  filter(n() > 1, sd(Predator.mass, na.rm = TRUE) > 0) %>%
+  ungroup()  # Ungroup to return a clean dataframe
 
-# Filter out NULL rows
-regression_results_loc <- do.call(rbind, Filter(Negate(is.null), regression_results_loc))
-regression_results_loc <- t(regression_results_loc)
-head(regression_results_loc)
 
-regression_results_loc
-# Write results to CSV
-write.csv(regression_results_loc, "../results/PP_Regress_Results_loc.csv", row.names = FALSE)
 
+
+
+#create regression results from DF
+regression_results <- Clean_data %>%
+  #group by the 3 fields
+  group_by(Location, Predator.lifestage, Type.of.feeding.interaction) %>%
+  
+  #for each combination, return the intercept, slope, r^2, adjusted r^2 and p_value
+  summarize(
+    intercept = coef(lm(Prey.mass.g ~ Predator.mass, data = cur_data()))[1],
+    slope = coef(lm(Prey.mass.g ~ Predator.mass, data = cur_data()))[2],
+    r_squared = summary(lm(Prey.mass.g ~ Predator.mass, data = cur_data()))$r.squared,
+    adj_r_squared = summary(lm(Prey.mass.g ~ Predator.mass, data = cur_data()))$adj.r.squared,
+    p_value = summary(lm(Prey.mass.g ~ Predator.mass, data = cur_data()))$coefficients[2, 4],
+    .groups = "drop"
+  )
+
+
+#Prints and creates CSV file
+print(regression_results)
+output_file <- "../Results/PP_Regress_Loc_Results.csv"
+write.csv(regression_results, file = output_file, row.names = FALSE)
+
+#Complete
+print(paste("Linear regression results saved to:", output_file))

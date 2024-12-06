@@ -1,6 +1,6 @@
 rm(list=ls())
 # Is Florida getting warmer? 
-load("../Data/KeyWestAnnualMeanTemperature(3).RData")
+load("../Data/KeyWestAnnualMeanTemperature.RData")
 
 cor_test <- cor.test(ats$Year, ats$Temp)
 
