@@ -92,7 +92,7 @@ SWS02.R
 
 GLMS.R
 
- Purpose: takes the results of the dataframe fisheries.csv and prints scatterplots of the data, performs a GLM of total abundance versus mean depth. 
+    Purpose: takes the results of the dataframe fisheries.csv and prints scatterplots of the data, performs a GLM of total abundance versus mean depth. 
     Usage: Run the script directly in R, have thefisheries.csv in the data file 
     Input:  fisheries.csv
     Output: 
